@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3745695E1DA5C8D70014A3DB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3745695D1DA5C8D70014A3DB /* Image.swift */; };
+		3745695F1DA5C8D70014A3DB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3745695D1DA5C8D70014A3DB /* Image.swift */; };
 		37BBBA191DA3263300F8D05A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BBBA181DA3263300F8D05A /* AppDelegate.swift */; };
 		37BBBA1B1DA3263300F8D05A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BBBA1A1DA3263300F8D05A /* ViewController.swift */; };
 		37BBBA1E1DA3263300F8D05A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37BBBA1C1DA3263300F8D05A /* Main.storyboard */; };
@@ -26,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3745695D1DA5C8D70014A3DB /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		37BBBA151DA3263300F8D05A /* handrighting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = handrighting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37BBBA181DA3263300F8D05A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37BBBA1A1DA3263300F8D05A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +82,7 @@
 			children = (
 				37BBBA181DA3263300F8D05A /* AppDelegate.swift */,
 				37BBBA1A1DA3263300F8D05A /* ViewController.swift */,
+				3745695D1DA5C8D70014A3DB /* Image.swift */,
 				37BBBA1C1DA3263300F8D05A /* Main.storyboard */,
 				37BBBA1F1DA3263300F8D05A /* Assets.xcassets */,
 				37BBBA211DA3263300F8D05A /* LaunchScreen.storyboard */,
@@ -198,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37BBBA1B1DA3263300F8D05A /* ViewController.swift in Sources */,
+				3745695E1DA5C8D70014A3DB /* Image.swift in Sources */,
 				37BBBA191DA3263300F8D05A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37BBBA2E1DA3263300F8D05A /* handrightingTests.swift in Sources */,
+				3745695F1DA5C8D70014A3DB /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
