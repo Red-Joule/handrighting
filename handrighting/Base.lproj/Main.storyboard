@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -19,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="jlR-eG-Ndw">
-                                <rect key="frame" x="20" y="80" width="560" height="63"/>
+                                <rect key="frame" x="20" y="80" width="560" height="395"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Image Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="de7-FP-Fq3">
                                         <rect key="frame" x="0.0" y="0.0" width="97" height="21"/>
@@ -32,6 +33,16 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="mdo-6Z-R3n">
+                                        <rect key="frame" x="0.0" y="75" width="320" height="320"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="mdo-6Z-R3n" secondAttribute="height" multiplier="1:1" id="A0p-f5-zmQ"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="zRX-Er-kkW" appends="YES" id="bJ0-4w-Mj2"/>
+                                        </connections>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="dKx-1Y-Xgq" firstAttribute="leading" secondItem="jlR-eG-Ndw" secondAttribute="leading" id="2bo-xH-QVe"/>
@@ -46,10 +57,23 @@
                             <constraint firstItem="jlR-eG-Ndw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="w9K-Xo-k3R"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageNameLabel" destination="de7-FP-Fq3" id="GVU-LY-kbO"/>
+                        <outlet property="imageNameTextField" destination="dKx-1Y-Xgq" id="kI2-op-I4Z"/>
+                        <outlet property="photoImageView" destination="mdo-6Z-R3n" id="FuO-Lf-Zeu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="zRX-Er-kkW">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="P5z-dp-PId"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="195" y="252"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultPhoto" width="540" height="540"/>
+    </resources>
 </document>

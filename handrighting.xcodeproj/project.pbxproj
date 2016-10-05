@@ -390,6 +390,7 @@
 				37BBBA341DA3263300F8D05A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		37BBBA351DA3263300F8D05A /* Build configuration list for PBXNativeTarget "handrightingTests" */ = {
 			isa = XCConfigurationList;
@@ -398,6 +399,7 @@
 				37BBBA371DA3263300F8D05A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
