@@ -11,9 +11,10 @@ import UIKit
 class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: Properties
-    @IBOutlet weak var imageNameLabel: UILabel!
-    @IBOutlet weak var imageNameTextField: UITextField!
-    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var imageNameLabel: UILabel!             // A name for the image
+    @IBOutlet weak var imageNameTextField: UITextField!     // To set the name for the image
+    @IBOutlet weak var imageTextLabel: UILabel!             // The text calculated for the image
+    @IBOutlet weak var photoImageView: UIImageView!         // The image
     
     
     override func viewDidLoad() {
@@ -54,12 +55,15 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         // Set photoImageView to display the selected image.
         photoImageView.image = selectedImage
         
+        // TODO: Calculate the imageTextLabel.text with OpenCV, and set it to the label
+        
         // Dismiss the picker.
         dismissViewControllerAnimated(true, completion: nil)
     }
     
 
     // MARK: Actions
+    
     @IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer) {
         // Hide the keyboard.
         imageNameTextField.resignFirstResponder()
