@@ -6,31 +6,19 @@
 //  Copyright © 2016 Red Joule. All rights reserved.
 //
 
+import UIKit
 import XCTest
-@testable import handrighting
 
-class handrightingTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class handwritingTests: XCTestCase {
+    // Tests to confirm that the Meal initializer returns when no name or a negative rating is provided.
+    func testImageInitialization() {
+        // Success case.
+        let potentialItem = Image(name: "Hello", photo: nil, text: nil)
+        XCTAssertNotNil(potentialItem)
+        
+        // Failure case.
+        let noName = Image(name: "", photo: nil, text: "something")
+        XCTAssertNil(noName, "Empty name is invalid")
+
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
