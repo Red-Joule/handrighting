@@ -15,6 +15,10 @@
 		37BBBA201DA3263300F8D05A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37BBBA1F1DA3263300F8D05A /* Assets.xcassets */; };
 		37BBBA231DA3263300F8D05A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37BBBA211DA3263300F8D05A /* LaunchScreen.storyboard */; };
 		37BBBA2E1DA3263300F8D05A /* handrightingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BBBA2D1DA3263300F8D05A /* handrightingTests.swift */; };
+		A3EC0CFD1DAAE8FF00291AF8 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3EC0CFC1DAAE8FF00291AF8 /* opencv2.framework */; };
+		A3EC0CFE1DAAE8FF00291AF8 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3EC0CFC1DAAE8FF00291AF8 /* opencv2.framework */; };
+		A3EC0D031DAAE92600291AF8 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = A3EC0D021DAAE92600291AF8 /* OpenCVWrapper.mm */; };
+		A3EC0D041DAAE92600291AF8 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = A3EC0D021DAAE92600291AF8 /* OpenCVWrapper.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +43,11 @@
 		37BBBA291DA3263300F8D05A /* handrightingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = handrightingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37BBBA2D1DA3263300F8D05A /* handrightingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = handrightingTests.swift; sourceTree = "<group>"; };
 		37BBBA2F1DA3263300F8D05A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3EC0CFC1DAAE8FF00291AF8 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		A3EC0CFF1DAAE92500291AF8 /* handrighting-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "handrighting-Bridging-Header.h"; path = "handrighting/handrighting-Bridging-Header.h"; sourceTree = "<group>"; };
+		A3EC0D001DAAE92500291AF8 /* handrightingTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "handrightingTests-Bridging-Header.h"; path = "handrighting/handrightingTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		A3EC0D011DAAE92600291AF8 /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenCVWrapper.h; path = handrighting/OpenCVWrapper.h; sourceTree = "<group>"; };
+		A3EC0D021DAAE92600291AF8 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = OpenCVWrapper.mm; path = handrighting/OpenCVWrapper.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3EC0CFD1DAAE8FF00291AF8 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3EC0CFE1DAAE8FF00291AF8 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,9 +73,13 @@
 		37BBBA0C1DA3263300F8D05A = {
 			isa = PBXGroup;
 			children = (
+				A3EC0D011DAAE92600291AF8 /* OpenCVWrapper.h */,
+				A3EC0D021DAAE92600291AF8 /* OpenCVWrapper.mm */,
 				37BBBA171DA3263300F8D05A /* handrighting */,
 				37BBBA2C1DA3263300F8D05A /* handrightingTests */,
 				37BBBA161DA3263300F8D05A /* Products */,
+				A3EC0CFF1DAAE92500291AF8 /* handrighting-Bridging-Header.h */,
+				A3EC0D001DAAE92500291AF8 /* handrightingTests-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +95,7 @@
 		37BBBA171DA3263300F8D05A /* handrighting */ = {
 			isa = PBXGroup;
 			children = (
+				A3EC0CFC1DAAE8FF00291AF8 /* opencv2.framework */,
 				37BBBA181DA3263300F8D05A /* AppDelegate.swift */,
 				37BBBA1A1DA3263300F8D05A /* ViewController.swift */,
 				3745695D1DA5C8D70014A3DB /* Image.swift */,
@@ -203,6 +219,7 @@
 			files = (
 				37BBBA1B1DA3263300F8D05A /* ViewController.swift in Sources */,
 				3745695E1DA5C8D70014A3DB /* Image.swift in Sources */,
+				A3EC0D031DAAE92600291AF8 /* OpenCVWrapper.mm in Sources */,
 				37BBBA191DA3263300F8D05A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +230,7 @@
 			files = (
 				37BBBA2E1DA3263300F8D05A /* handrightingTests.swift in Sources */,
 				3745695F1DA5C8D70014A3DB /* Image.swift in Sources */,
+				A3EC0D041DAAE92600291AF8 /* OpenCVWrapper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,10 +353,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/handrighting",
+				);
 				INFOPLIST_FILE = handrighting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.handrighting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "handrighting/handrighting-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -346,10 +371,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/handrighting",
+				);
 				INFOPLIST_FILE = handrighting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.handrighting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "handrighting/handrighting-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -357,10 +388,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/handrighting",
+				);
 				INFOPLIST_FILE = handrightingTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.handrightingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "handrighting/handrightingTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/handrighting.app/handrighting";
 			};
 			name = Debug;
@@ -369,10 +407,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/handrighting",
+				);
 				INFOPLIST_FILE = handrightingTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.handrightingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "handrighting/handrightingTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/handrighting.app/handrighting";
 			};
 			name = Release;
