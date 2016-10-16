@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  UploadViewController.swift
 //  handrighting
 //
 //  Created by Eric Mooney on 10/3/16.
@@ -8,15 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: Properties
     @IBOutlet weak var imageNameLabel: UILabel!             // A name for the image
     @IBOutlet weak var imageNameTextField: UITextField!     // To set the name for the image
     @IBOutlet weak var imageTextLabel: UILabel!             // The text calculated for the image
     @IBOutlet weak var photoImageView: UIImageView!         // The image
-    @IBOutlet weak var openCVVersionLabel: UILabel! // Open CV Version
-    
+    @IBOutlet weak var openCVVersionLabel: UILabel!         // Open CV Version
+    @IBOutlet weak var saveButton: UIBarButtonItem!  // TODO! Not currently setup for anything.
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +63,13 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-
+    // MARK: Navigation
+    @IBAction func cancelButton(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    
     // MARK: Actions
     
     @IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer) {
