@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "handrighting/AppDelegate.swift"
+            timestampString = "498276373.525213"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "handrighting.AppDelegate.init () -&gt; handrighting.AppDelegate"
+                  moduleName = "handrighting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ericmooney/Dropbox%20(Personal)/1_My%20Docs/BU%20Coursework/2016_Fall/EC601%20Product%20Design/handrighting/handrighting/AppDelegate.swift"
+                  timestampString = "498276615.479244"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "main"
+                  moduleName = "handrighting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ericmooney/Dropbox%20(Personal)/1_My%20Docs/BU%20Coursework/2016_Fall/EC601%20Product%20Design/handrighting/handrighting/AppDelegate.swift"
+                  timestampString = "498276615.480157"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
