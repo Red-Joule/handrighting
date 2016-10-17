@@ -24,6 +24,13 @@ class DrawViewController: UIViewController {
         theDrawView.setNeedsDisplay()
     }
     
+    @IBAction func saveDrawing(sender: UIButton) {
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let sourceImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        UIImageWriteToSavedPhotosAlbum(sourceImage, nil, nil, nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

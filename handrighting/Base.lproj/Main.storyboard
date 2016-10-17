@@ -53,7 +53,7 @@
             </objects>
             <point key="canvasLocation" x="219" y="252"/>
         </scene>
-        <!--New Drawn Image-->
+        <!--New Drawing-->
         <scene sceneID="Fly-j5-MPH">
             <objects>
                 <viewController id="CT7-dB-qID" customClass="DrawViewController" customModule="handrighting" customModuleProvider="target" sceneMemberID="viewController">
@@ -65,21 +65,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BIg-6f-W6w" customClass="DrawView" customModule="handrighting" customModuleProvider="target">
-                                <rect key="frame" x="20" y="72" width="560" height="451"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhc-hG-7ak">
-                                <rect key="frame" x="253" y="537" width="36" height="30"/>
-                                <state key="normal" title="Clear"/>
-                                <connections>
-                                    <action selector="clear:" destination="CT7-dB-qID" eventType="touchUpInside" id="I8i-ip-qB1"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="0oD-an-Hxa">
+                                <rect key="frame" x="20" y="72" width="560" height="499"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BIg-6f-W6w" customClass="DrawView" customModule="handrighting" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="451"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="tVO-V5-iPH">
+                                        <rect key="frame" x="168" y="469" width="224" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhc-hG-7ak">
+                                                <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
+                                                <state key="normal" title="Clear Drawing"/>
+                                                <connections>
+                                                    <action selector="clear:" destination="CT7-dB-qID" eventType="touchUpInside" id="I8i-ip-qB1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCP-2V-Tbz">
+                                                <rect key="frame" x="121" y="0.0" width="103" height="30"/>
+                                                <state key="normal" title="Save to Library"/>
+                                                <connections>
+                                                    <action selector="saveDrawing:" destination="CT7-dB-qID" eventType="touchUpInside" id="IRD-Bb-goP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New Drawn Image" id="cee-aZ-p4I">
+                    <navigationItem key="navigationItem" title="New Drawing" id="cee-aZ-p4I">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="KdF-FG-6ri">
                             <connections>
                                 <action selector="cancel:" destination="CT7-dB-qID" id="zna-To-HUj"/>
