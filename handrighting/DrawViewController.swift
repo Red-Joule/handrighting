@@ -34,6 +34,7 @@ class DrawViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.drawView.layer.borderWidth = 3.0;
 
         // Do any additional setup after loading the view.
     }
