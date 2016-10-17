@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Your Handwriting-->
@@ -32,6 +33,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKx-7c-L45">
                                         <rect key="frame" x="236" y="90" width="88" height="30"/>
                                         <state key="normal" title="Draw a Word"/>
+                                        <connections>
+                                            <segue destination="HQG-gi-Fkt" kind="presentation" id="5TA-0q-laE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -49,6 +53,35 @@
             </objects>
             <point key="canvasLocation" x="219" y="252"/>
         </scene>
+        <!--New Drawn Image-->
+        <scene sceneID="Fly-j5-MPH">
+            <objects>
+                <viewController id="CT7-dB-qID" customClass="DrawViewController" customModule="handrighting" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RhZ-FD-1ea"/>
+                        <viewControllerLayoutGuide type="bottom" id="I8E-ze-zKb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tTT-dz-Sek">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Drawn Image" id="cee-aZ-p4I">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="KdF-FG-6ri">
+                            <connections>
+                                <action selector="cancel:" destination="CT7-dB-qID" id="zna-To-HUj"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem id="lNd-GU-0XY"/>
+                            <barButtonItem systemItem="save" id="tJU-RF-drJ"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A1a-y7-EAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1801" y="741"/>
+        </scene>
         <!--New Uploaded Image-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -61,7 +94,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="jlR-eG-Ndw">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="jlR-eG-Ndw">
                                 <rect key="frame" x="20" y="80" width="560" height="427"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Image Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="de7-FP-Fq3">
@@ -138,7 +171,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1819" y="252"/>
+            <point key="canvasLocation" x="1801" y="-150"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ojH-hG-Bs6">
@@ -174,7 +207,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOg-Ia-GZv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1007" y="252"/>
+            <point key="canvasLocation" x="999" y="-150"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="56g-aD-P4v">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HQG-gi-Fkt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="skZ-yy-Jik">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CT7-dB-qID" kind="relationship" relationship="rootViewController" id="5l0-WU-4nl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3y8-fO-JKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="999" y="741"/>
         </scene>
     </scenes>
     <resources>

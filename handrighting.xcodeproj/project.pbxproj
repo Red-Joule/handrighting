@@ -15,6 +15,7 @@
 		37BBBA231DA3263300F8D05A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37BBBA211DA3263300F8D05A /* LaunchScreen.storyboard */; };
 		37BBBA2E1DA3263300F8D05A /* handrightingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BBBA2D1DA3263300F8D05A /* handrightingTests.swift */; };
 		37ECC6081DB31723004BB9FF /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECC6071DB31723004BB9FF /* UploadViewController.swift */; };
+		37F0B7071DB588A300DDA479 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0B7061DB588A300DDA479 /* DrawViewController.swift */; };
 		37F6D1551DB3078700351F06 /* ChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F6D1541DB3078700351F06 /* ChooseViewController.swift */; };
 		A3EC0CFD1DAAE8FF00291AF8 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3EC0CFC1DAAE8FF00291AF8 /* opencv2.framework */; };
 		A3EC0CFE1DAAE8FF00291AF8 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3EC0CFC1DAAE8FF00291AF8 /* opencv2.framework */; };
@@ -44,6 +45,7 @@
 		37BBBA2D1DA3263300F8D05A /* handrightingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = handrightingTests.swift; sourceTree = "<group>"; };
 		37BBBA2F1DA3263300F8D05A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37ECC6071DB31723004BB9FF /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		37F0B7061DB588A300DDA479 /* DrawViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
 		37F6D1541DB3078700351F06 /* ChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseViewController.swift; sourceTree = "<group>"; };
 		A3EC0CFC1DAAE8FF00291AF8 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		A3EC0CFF1DAAE92500291AF8 /* handrighting-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "handrighting-Bridging-Header.h"; path = "handrighting/handrighting-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				37BBBA181DA3263300F8D05A /* AppDelegate.swift */,
 				3745695D1DA5C8D70014A3DB /* Image.swift */,
 				37BBBA1C1DA3263300F8D05A /* Main.storyboard */,
+				37F0B7061DB588A300DDA479 /* DrawViewController.swift */,
 				37ECC6071DB31723004BB9FF /* UploadViewController.swift */,
 				37F6D1541DB3078700351F06 /* ChooseViewController.swift */,
 				37BBBA1F1DA3263300F8D05A /* Assets.xcassets */,
@@ -220,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37F0B7071DB588A300DDA479 /* DrawViewController.swift in Sources */,
 				3745695E1DA5C8D70014A3DB /* Image.swift in Sources */,
 				37ECC6081DB31723004BB9FF /* UploadViewController.swift in Sources */,
 				A3EC0D031DAAE92600291AF8 /* OpenCVWrapper.mm in Sources */,
