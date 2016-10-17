@@ -10,6 +10,21 @@ import UIKit
 
 class DrawViewController: UIViewController {
 
+    // MARK: Properties
+    
+    @IBOutlet weak var drawView: DrawView!
+    
+    
+    
+    // MARK: Actions
+    
+    @IBAction func clear(sender: UIButton) {
+        let theDrawView : DrawView = drawView as DrawView
+        theDrawView.lines = []
+        theDrawView.setNeedsDisplay()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +39,7 @@ class DrawViewController: UIViewController {
 
 
     // MARK: - Navigation
+    
     @IBAction func cancel(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
     }
