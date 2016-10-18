@@ -10,8 +10,31 @@ import UIKit
 
 class DrawViewController: UIViewController {
 
+    // MARK: Properties
+    
+    @IBOutlet weak var drawView: DrawView!
+    
+    
+    
+    // MARK: Actions
+    
+    @IBAction func clear(sender: UIButton) {
+        let theDrawView : DrawView = drawView as DrawView
+        theDrawView.lines = []
+        theDrawView.setNeedsDisplay()
+    }
+    
+    @IBAction func saveDrawing(sender: UIButton) {
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let sourceImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        UIImageWriteToSavedPhotosAlbum(sourceImage, nil, nil, nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.drawView.layer.borderWidth = 3.0;
 
         // Do any additional setup after loading the view.
     }
@@ -24,6 +47,7 @@ class DrawViewController: UIViewController {
 
 
     // MARK: - Navigation
+    
     @IBAction func cancel(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
     }

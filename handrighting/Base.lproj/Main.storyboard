@@ -53,7 +53,7 @@
             </objects>
             <point key="canvasLocation" x="219" y="252"/>
         </scene>
-        <!--New Drawn Image-->
+        <!--New Drawing-->
         <scene sceneID="Fly-j5-MPH">
             <objects>
                 <viewController id="CT7-dB-qID" customClass="DrawViewController" customModule="handrighting" customModuleProvider="target" sceneMemberID="viewController">
@@ -64,9 +64,39 @@
                     <view key="view" contentMode="scaleToFill" id="tTT-dz-Sek">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" translatesAutoresizingMaskIntoConstraints="NO" id="BIg-6f-W6w" customClass="DrawView" customModule="handrighting" customModuleProvider="target">
+                                <rect key="frame" x="20" y="97" width="320" height="320"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BIg-6f-W6w" secondAttribute="height" multiplier="320:320" id="9x2-vt-nSX"/>
+                                    <constraint firstAttribute="width" secondItem="BIg-6f-W6w" secondAttribute="height" multiplier="1:1" id="DI3-Ry-359"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9x2-vt-nSX"/>
+                                        <exclude reference="DI3-Ry-359"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhc-hG-7ak">
+                                <rect key="frame" x="20" y="425" width="96" height="30"/>
+                                <state key="normal" title="Clear Drawing"/>
+                                <connections>
+                                    <action selector="clear:" destination="CT7-dB-qID" eventType="touchUpInside" id="I8i-ip-qB1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCP-2V-Tbz">
+                                <rect key="frame" x="20" y="463" width="103" height="30"/>
+                                <state key="normal" title="Save to Library"/>
+                                <connections>
+                                    <action selector="saveDrawing:" destination="CT7-dB-qID" eventType="touchUpInside" id="IRD-Bb-goP"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New Drawn Image" id="cee-aZ-p4I">
+                    <navigationItem key="navigationItem" title="New Drawing" id="cee-aZ-p4I">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="KdF-FG-6ri">
                             <connections>
                                 <action selector="cancel:" destination="CT7-dB-qID" id="zna-To-HUj"/>
@@ -77,6 +107,9 @@
                             <barButtonItem systemItem="save" id="tJU-RF-drJ"/>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="drawView" destination="BIg-6f-W6w" id="PeT-yk-9Vb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1a-y7-EAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,7 +133,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Image Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="de7-FP-Fq3">
                                         <rect key="frame" x="0.0" y="0.0" width="97" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add image name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dKx-1Y-Xgq">
@@ -111,7 +144,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Image Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pW6-2g-XyY">
                                         <rect key="frame" x="0.0" y="75" width="84" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="mdo-6Z-R3n">
@@ -133,7 +166,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXj-u8-SP2">
                                 <rect key="frame" x="20" y="515" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
