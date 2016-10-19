@@ -18,11 +18,21 @@ class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet weak var openCVVersionLabel: UILabel!         // Open CV Version
     @IBOutlet weak var saveButton: UIBarButtonItem!  // TODO! Not currently setup for anything.
     
+    /*
+     This value is either passed by `ImageTableViewController` in `prepareForSegue(_:sender:)`
+     or constructed as part of adding a new image.
+     */
+    var image: Image?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Handle the text field’s user input through delegate callbacks.
         imageNameTextField.delegate = self
+        
+         // Enable the Save button only if the text field has a valid Meal name.
+        checkValidImageName()
+        
         openCVVersionLabel.text = OpenCVWrapper.openCVVersionString()
     }
 
@@ -40,7 +50,19 @@ class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
+        checkValidImageName()
         imageNameLabel.text = textField.text
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        // Disable the Save button while editing.
+        saveButton.enabled = false
+    }
+    
+    func checkValidImageName() {
+        // Disable the Save button if the text field is empty.
+        let text = imageNameTextField.text ?? ""
+        saveButton.enabled = !text.isEmpty
     }
     
     // MARK: UIImagePickerControllerDelegate
@@ -68,6 +90,16 @@ class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // This method lets you configure a view controller before it's presented.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if saveButton === sender {
+            let name = imageNameTextField.text ?? ""
+            let photo = photoImageView.image
+            
+            // Set the image to be passed to  after the unwind segue.
+            image = Image(photo: photo!, name: name, text: nil)
+        }
+    }
     
     
     // MARK: Actions

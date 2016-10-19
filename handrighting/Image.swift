@@ -11,22 +11,18 @@ import UIKit
 class Image {
     // MARK: Properties
     
-    var name: String
-    var photo: UIImage?
+    var photo: UIImage
+    var name: String?
     var text: String?
     
     // MARK: Initialization
     
-    init?(name: String, photo: UIImage?, text: String?) {
+    init?(photo: UIImage, name: String?, text: String?) {
         // Initialize stored properties.
-        self.name = name
         self.photo = photo
+        self.name = name
         self.text = text
         
-        // Initialization should fail if there is no name
-        if name.isEmpty {
-            return nil
-        }
     }
     
 }
