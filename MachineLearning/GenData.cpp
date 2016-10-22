@@ -33,13 +33,17 @@ int main() {
     cv::Mat matTrainingImagesAsFlattenedFloats;
 
                                 // possible chars we are interested in are digits 0 through 9 and capital letters A through Z, put these in vector intValidChars
-    /* std::vector<int> intValidChars = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', */
-    /*                                    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', */
-    /*                                    'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', */
-    /*                                    'U', 'V', 'W', 'X', 'Y', 'Z' }; */
-    std::vector<int> intValidChars = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
-                                       'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
-                                       'u', 'v', 'w', 'x', 'y', 'z' };
+    std::vector<int> intValidChars = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+                                       'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+                                       'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+                                       'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 
+									   'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 
+									   'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 
+									   'y', 'z' };
+
+    /* std::vector<int> intValidChars = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', */
+    /*                                    'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', */
+    /*                                    'u', 'v', 'w', 'x', 'y', 'z' }; */
 
     imgTrainingNumbers = cv::imread("training_chars.png");          // read in training numbers image
 
@@ -136,7 +140,3 @@ int main() {
 
     return(0);
 }
-
-
-
-
