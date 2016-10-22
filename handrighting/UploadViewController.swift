@@ -72,7 +72,7 @@ class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             // let text = resultOfOpenCV
             
             // Set the image to be passed.
-            let savedImage = Image(photo: photo!, name: nil, text: nil) // when resultOfOpenCV available, substitute nil for text
+            let savedImage = Image(photo: photo!, name: nil, text: "resultOfOpenCV") // when resultOfOpenCV available, substitute nil for text
             DestinationViewController.image = savedImage
         
         }
