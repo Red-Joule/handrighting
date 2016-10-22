@@ -1,3 +1,6 @@
 # OpenCV File too large #
 #########################
 OpenCV
+CMakeCache
+CMakeFiles
+Makefile
