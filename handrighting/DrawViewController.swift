@@ -25,8 +25,8 @@ class DrawViewController: UIViewController {
     }
     
     @IBAction func saveDrawing(sender: UIButton) {
-        UIGraphicsBeginImageContext(view.frame.size)
-        view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        UIGraphicsBeginImageContext(self.drawView.frame.size)
+        self.drawView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let sourceImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         UIImageWriteToSavedPhotosAlbum(sourceImage, nil, nil, nil)
@@ -34,7 +34,7 @@ class DrawViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.drawView.layer.borderWidth = 3.0;
+        self.drawView.layer.borderWidth = 1.0;
 
         // Do any additional setup after loading the view.
     }
