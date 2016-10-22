@@ -1,4 +1,0 @@
-/Users/luke/handrighting/MachineLearning/CMakeFiles/rebuild_cache.dir
-/Users/luke/handrighting/MachineLearning/CMakeFiles/edit_cache.dir
-/Users/luke/handrighting/MachineLearning/CMakeFiles/TrainAndTest.dir
-/Users/luke/handrighting/MachineLearning/CMakeFiles/GenData.dir
