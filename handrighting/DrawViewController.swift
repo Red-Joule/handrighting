@@ -13,8 +13,9 @@ class DrawViewController: UIViewController {
     // MARK: Properties
     
     @IBOutlet weak var drawView: DrawView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
-    
+    var photoImage: UIImage!         // The image
     
     // MARK: Actions
     
@@ -24,14 +25,16 @@ class DrawViewController: UIViewController {
         theDrawView.setNeedsDisplay()
     }
     
-    @IBAction func saveDrawing(sender: UIButton) {
+    func saveDrawingToPhotoLibrary() {
         UIGraphicsBeginImageContext(self.drawView.frame.size)
         self.drawView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let sourceImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         UIImageWriteToSavedPhotosAlbum(sourceImage, nil, nil, nil)
+        photoImage = sourceImage
     }
-    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.drawView.layer.borderWidth = 1.0;
@@ -47,16 +50,34 @@ class DrawViewController: UIViewController {
 
 
     // MARK: - Navigation
-    
     @IBAction func cancel(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    // This method lets you configure a view controller before it's presented.
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if saveButton === sender {
+            // Save the drawing to the photo library
+            saveDrawingToPhotoLibrary()
+            
+            // Run the OpenCV OCR on the image
+            // resultOfOpenCV = ????
+            
+            let NavigationController = segue.destinationViewController as! UINavigationController
+            let DestinationViewController = NavigationController.topViewController as! ShowViewController
+            
+            // Get the info that generated this segue.
+            let name = "Drawing"
+            let photo = photoImage
+            // let text = resultOfOpenCV
+            
+            // Set the image to be passed.
+            let savedImage = Image(photo: photo, name: name, text: nil) // when resultOfOpenCV availabe, substitute nil for text
+            DestinationViewController.image = savedImage
+            
+        }
     }
+    
 
 }

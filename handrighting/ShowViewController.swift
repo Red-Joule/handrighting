@@ -1,22 +1,33 @@
 //
-//  ChooseViewController.swift
+//  ShowViewController.swift
 //  handrighting
 //
-//  Created by Eric Mooney on 10/15/16.
+//  Created by Eric Mooney on 10/19/16.
 //  Copyright © 2016 Red Joule. All rights reserved.
 //
 
 import UIKit
 
-class ChooseViewController: UIViewController {
+class ShowViewController: UIViewController {
 
     // MARK: Properties
+    @IBOutlet weak var imageNameLabel: UILabel!
+    @IBOutlet weak var imageTextLabel: UILabel!
+    @IBOutlet weak var photoImageView: UIImageView!
     
+    var image: Image?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Set up views if editing an existing Image.
+        if let image = image {
+            navigationItem.title = image.name
+            imageNameLabel.text   = image.name
+            photoImageView.image = image.photo
+            imageTextLabel.text = image.text
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,8 +45,6 @@ class ChooseViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    // MARK: Actions
 
 
 }

@@ -14,6 +14,7 @@
 		37BBBA201DA3263300F8D05A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37BBBA1F1DA3263300F8D05A /* Assets.xcassets */; };
 		37BBBA231DA3263300F8D05A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37BBBA211DA3263300F8D05A /* LaunchScreen.storyboard */; };
 		37BBBA2E1DA3263300F8D05A /* handrightingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BBBA2D1DA3263300F8D05A /* handrightingTests.swift */; };
+		37C2EB571DB835CB00BA7506 /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2EB561DB835CB00BA7506 /* ShowViewController.swift */; };
 		37ECC6081DB31723004BB9FF /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECC6071DB31723004BB9FF /* UploadViewController.swift */; };
 		37F0B7071DB588A300DDA479 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0B7061DB588A300DDA479 /* DrawViewController.swift */; };
 		37F0B7091DB58E9B00DDA479 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0B7081DB58E9B00DDA479 /* DrawView.swift */; };
@@ -47,6 +48,7 @@
 		37BBBA291DA3263300F8D05A /* handrightingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = handrightingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37BBBA2D1DA3263300F8D05A /* handrightingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = handrightingTests.swift; sourceTree = "<group>"; };
 		37BBBA2F1DA3263300F8D05A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37C2EB561DB835CB00BA7506 /* ShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
 		37ECC6071DB31723004BB9FF /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		37F0B7061DB588A300DDA479 /* DrawViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
 		37F0B7081DB58E9B00DDA479 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				A3EC0CFC1DAAE8FF00291AF8 /* opencv2.framework */,
 				37BBBA181DA3263300F8D05A /* AppDelegate.swift */,
 				3745695D1DA5C8D70014A3DB /* Image.swift */,
+				37C2EB561DB835CB00BA7506 /* ShowViewController.swift */,
 				37BBBA1C1DA3263300F8D05A /* Main.storyboard */,
 				37F0B7061DB588A300DDA479 /* DrawViewController.swift */,
 				37ECC6071DB31723004BB9FF /* UploadViewController.swift */,
@@ -235,6 +238,7 @@
 				37F0B7091DB58E9B00DDA479 /* DrawView.swift in Sources */,
 				37ECC6081DB31723004BB9FF /* UploadViewController.swift in Sources */,
 				A3EC0D031DAAE92600291AF8 /* OpenCVWrapper.mm in Sources */,
+				37C2EB571DB835CB00BA7506 /* ShowViewController.swift in Sources */,
 				37F0B70C1DB58F0E00DDA479 /* Line.swift in Sources */,
 				37F6D1551DB3078700351F06 /* ChooseViewController.swift in Sources */,
 				37BBBA191DA3263300F8D05A /* AppDelegate.swift in Sources */,
