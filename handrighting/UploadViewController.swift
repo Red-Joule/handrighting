@@ -78,9 +78,7 @@ class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         
         // Set photoImageView to display the selected image.
         photoImageView.image = selectedImage
-        
-        // TODO: Calculate the imageTextLabel.text with OpenCV, and set it to the label
-        
+                
         // Dismiss the picker.
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -93,15 +91,20 @@ class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     // This method lets you configure a view controller before it's presented.
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if saveButton === sender {
+            
+            // Run the OpenCV OCR on the image
+            // resultOfOpenCV = ????
+            
             let NavigationController = segue.destinationViewController as! UINavigationController
             let DestinationViewController = NavigationController.topViewController as! ShowViewController
             
             // Get the info that generated this segue.
             let name = imageNameTextField.text ?? ""
             let photo = photoImageView.image
+            // let text = resultOfOpenCV
             
             // Set the image to be passed.
-            let savedImage = Image(photo: photo!, name: name, text: nil)
+            let savedImage = Image(photo: photo!, name: name, text: nil) // when resultOfOpenCV available, substitute nil for text
             DestinationViewController.image = savedImage
         
         }

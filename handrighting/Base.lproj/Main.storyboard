@@ -81,26 +81,17 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhc-hG-7ak">
-                                        <rect key="frame" x="0.0" y="330" width="96" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhc-hG-7ak">
+                                        <rect key="frame" x="0.0" y="330" width="96" height="70"/>
                                         <state key="normal" title="Clear Drawing"/>
                                         <connections>
                                             <action selector="clear:" destination="CT7-dB-qID" eventType="touchUpInside" id="I8i-ip-qB1"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCP-2V-Tbz">
-                                        <rect key="frame" x="0.0" y="370" width="103" height="30"/>
-                                        <state key="normal" title="Save to Library"/>
-                                        <connections>
-                                            <action selector="saveDrawing:" destination="CT7-dB-qID" eventType="touchUpInside" id="IRD-Bb-goP"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="BIg-6f-W6w" firstAttribute="top" secondItem="VIL-8g-7ng" secondAttribute="top" id="5bK-bD-s70"/>
-                                    <constraint firstItem="uCP-2V-Tbz" firstAttribute="top" secondItem="bhc-hG-7ak" secondAttribute="bottom" constant="10" id="6Wl-8e-rXn"/>
                                     <constraint firstAttribute="bottom" secondItem="bhc-hG-7ak" secondAttribute="bottom" constant="40" id="7Xq-Ps-QR8"/>
-                                    <constraint firstItem="uCP-2V-Tbz" firstAttribute="top" secondItem="VIL-8g-7ng" secondAttribute="top" constant="370" id="CcA-pI-cq9"/>
                                     <constraint firstItem="BIg-6f-W6w" firstAttribute="leading" secondItem="VIL-8g-7ng" secondAttribute="leading" id="Jca-4s-Yl7"/>
                                     <constraint firstItem="bhc-hG-7ak" firstAttribute="leading" secondItem="VIL-8g-7ng" secondAttribute="leading" id="K1Z-G8-DTn"/>
                                     <constraint firstItem="BIg-6f-W6w" firstAttribute="top" secondItem="VIL-8g-7ng" secondAttribute="top" id="MAI-nM-e8U"/>
@@ -108,31 +99,20 @@
                                     <constraint firstItem="BIg-6f-W6w" firstAttribute="centerX" secondItem="VIL-8g-7ng" secondAttribute="centerX" id="P9e-YT-n5E"/>
                                     <constraint firstItem="BIg-6f-W6w" firstAttribute="leading" secondItem="VIL-8g-7ng" secondAttribute="leading" id="RXB-2A-vms"/>
                                     <constraint firstItem="bhc-hG-7ak" firstAttribute="leading" secondItem="VIL-8g-7ng" secondAttribute="leading" id="T5K-X4-V2t"/>
-                                    <constraint firstItem="uCP-2V-Tbz" firstAttribute="leading" secondItem="BIg-6f-W6w" secondAttribute="leading" id="TMW-ZB-7zJ"/>
                                     <constraint firstItem="BIg-6f-W6w" firstAttribute="top" secondItem="VIL-8g-7ng" secondAttribute="topMargin" id="TnT-3b-mcL"/>
-                                    <constraint firstItem="uCP-2V-Tbz" firstAttribute="leading" secondItem="bhc-hG-7ak" secondAttribute="leading" id="bLc-hV-Un7"/>
-                                    <constraint firstItem="uCP-2V-Tbz" firstAttribute="leading" secondItem="VIL-8g-7ng" secondAttribute="leading" id="bcf-aV-UT7"/>
-                                    <constraint firstAttribute="bottom" secondItem="uCP-2V-Tbz" secondAttribute="bottom" id="eJ0-Pf-zxm"/>
                                     <constraint firstItem="BIg-6f-W6w" firstAttribute="trailing" secondItem="VIL-8g-7ng" secondAttribute="trailingMargin" id="eMl-hH-twm"/>
                                     <constraint firstItem="BIg-6f-W6w" firstAttribute="leading" secondItem="VIL-8g-7ng" secondAttribute="leading" id="h3O-nS-Z0q"/>
-                                    <constraint firstAttribute="bottom" secondItem="uCP-2V-Tbz" secondAttribute="bottom" id="hRd-p2-abe"/>
                                     <constraint firstItem="bhc-hG-7ak" firstAttribute="leading" secondItem="VIL-8g-7ng" secondAttribute="leading" id="jGW-7l-5uk"/>
-                                    <constraint firstAttribute="bottom" secondItem="uCP-2V-Tbz" secondAttribute="bottom" id="kkr-Iq-ZBt"/>
-                                    <constraint firstItem="uCP-2V-Tbz" firstAttribute="leading" secondItem="VIL-8g-7ng" secondAttribute="leading" id="mpF-xP-H9K"/>
-                                    <constraint firstItem="uCP-2V-Tbz" firstAttribute="leading" secondItem="VIL-8g-7ng" secondAttribute="leading" id="n2o-H7-VNZ"/>
                                     <constraint firstAttribute="bottom" secondItem="BIg-6f-W6w" secondAttribute="bottom" constant="80" id="psY-bs-4pi"/>
                                     <constraint firstItem="bhc-hG-7ak" firstAttribute="leading" secondItem="VIL-8g-7ng" secondAttribute="leading" id="qFz-NA-4xD"/>
                                     <constraint firstItem="BIg-6f-W6w" firstAttribute="top" secondItem="VIL-8g-7ng" secondAttribute="top" id="qcQ-Rl-xUZ"/>
-                                    <constraint firstItem="uCP-2V-Tbz" firstAttribute="leading" secondItem="VIL-8g-7ng" secondAttribute="leadingMargin" id="rGz-ce-zup"/>
                                     <constraint firstAttribute="trailing" secondItem="BIg-6f-W6w" secondAttribute="trailing" id="sWe-8P-bkc"/>
                                     <constraint firstItem="BIg-6f-W6w" firstAttribute="leading" secondItem="VIL-8g-7ng" secondAttribute="leading" id="tne-5Z-E1G"/>
                                     <constraint firstItem="bhc-hG-7ak" firstAttribute="leading" secondItem="BIg-6f-W6w" secondAttribute="leading" id="uLf-NA-Pyn"/>
                                     <constraint firstItem="bhc-hG-7ak" firstAttribute="leading" secondItem="VIL-8g-7ng" secondAttribute="leadingMargin" id="v7L-na-ZLj"/>
                                     <constraint firstItem="bhc-hG-7ak" firstAttribute="top" secondItem="BIg-6f-W6w" secondAttribute="bottom" constant="10" id="vcq-mx-wVR"/>
                                     <constraint firstAttribute="trailing" secondItem="BIg-6f-W6w" secondAttribute="trailing" id="vyC-By-aGT"/>
-                                    <constraint firstItem="uCP-2V-Tbz" firstAttribute="bottom" secondItem="VIL-8g-7ng" secondAttribute="bottomMargin" id="wd0-lP-nvU"/>
                                     <constraint firstItem="bhc-hG-7ak" firstAttribute="top" secondItem="VIL-8g-7ng" secondAttribute="top" constant="330" id="xMr-Dl-Z4l"/>
-                                    <constraint firstItem="uCP-2V-Tbz" firstAttribute="leading" secondItem="VIL-8g-7ng" secondAttribute="leading" id="xTq-BZ-U9d"/>
                                     <constraint firstItem="BIg-6f-W6w" firstAttribute="leading" secondItem="VIL-8g-7ng" secondAttribute="leadingMargin" id="xW0-01-3Y2"/>
                                     <constraint firstAttribute="trailing" secondItem="BIg-6f-W6w" secondAttribute="trailing" id="zUl-bv-Oms"/>
                                 </constraints>

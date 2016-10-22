@@ -58,16 +58,22 @@ class DrawViewController: UIViewController {
     // This method lets you configure a view controller before it's presented.
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if saveButton === sender {
+            // Save the drawing to the photo library
             saveDrawingToPhotoLibrary()
+            
+            // Run the OpenCV OCR on the image
+            // resultOfOpenCV = ????
+            
             let NavigationController = segue.destinationViewController as! UINavigationController
             let DestinationViewController = NavigationController.topViewController as! ShowViewController
             
             // Get the info that generated this segue.
             let name = "Drawing"
             let photo = photoImage
+            // let text = resultOfOpenCV
             
             // Set the image to be passed.
-            let savedImage = Image(photo: photo, name: name, text: nil)
+            let savedImage = Image(photo: photo, name: name, text: nil) // when resultOfOpenCV availabe, substitute nil for text
             DestinationViewController.image = savedImage
             
         }
