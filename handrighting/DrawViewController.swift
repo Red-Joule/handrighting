@@ -73,7 +73,7 @@ class DrawViewController: UIViewController {
             // let text = resultOfOpenCV
             
             // Set the image to be passed.
-            let savedImage = Image(photo: photo, name: name, text: nil) // when resultOfOpenCV availabe, substitute nil for text
+            let savedImage = Image(photo: photo, name: name, text: "resultOfOpenCV") // when resultOfOpenCV availabe, substitute nil for text
             DestinationViewController.image = savedImage
             
         }

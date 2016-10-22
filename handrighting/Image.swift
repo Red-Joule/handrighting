@@ -12,7 +12,7 @@ class Image {
     // MARK: Properties
     
     var photo: UIImage
-    var name: String?
+    var name: String? //not currently used
     var text: String?
     
     // MARK: Initialization
@@ -20,7 +20,7 @@ class Image {
     init?(photo: UIImage, name: String?, text: String?) {
         // Initialize stored properties.
         self.photo = photo
-        self.name = name
+        self.name = name //not currently used
         self.text = text
         
     }
