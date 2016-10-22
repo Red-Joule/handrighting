@@ -20,7 +20,7 @@ class ShowViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Set up views if editing an existing Meal.
+        // Set up views if editing an existing Image.
         if let image = image {
             navigationItem.title = image.name
             imageNameLabel.text   = image.name

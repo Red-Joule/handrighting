@@ -99,7 +99,7 @@ class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             // Get the info that generated this segue.
             let name = imageNameTextField.text ?? ""
             let photo = photoImageView.image
-                
+            
             // Set the image to be passed.
             let savedImage = Image(photo: photo!, name: name, text: nil)
             DestinationViewController.image = savedImage

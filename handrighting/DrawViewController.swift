@@ -43,7 +43,7 @@ class DrawViewController: UIViewController {
         photoImage = sourceImage
     }
 
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.drawView.layer.borderWidth = 3.0;
@@ -63,14 +63,14 @@ class DrawViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-
+    
     // This method lets you configure a view controller before it's presented.
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         print("in func")
         if saveButton === sender {
             print("yes save")
             print(sender)
-            //saveDrawingToPhotoLibrary()
+            saveDrawingToPhotoLibrary()
             let NavigationController = segue.destinationViewController as! UINavigationController
             let DestinationViewController = NavigationController.topViewController as! ShowViewController
             
@@ -79,11 +79,11 @@ class DrawViewController: UIViewController {
             let photo = photoImage
             
             // Set the image to be passed.
-            let savedImage = Image(photo: photo!, name: name, text: nil)
+            let savedImage = Image(photo: photo, name: name, text: nil)
             DestinationViewController.image = savedImage
             
         } else {
-                print("no save")
+            print("no save")
         }
     }
     

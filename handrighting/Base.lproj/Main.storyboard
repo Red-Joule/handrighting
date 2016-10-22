@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Your Handwriting-->
@@ -102,14 +101,11 @@
                                 <action selector="cancel:" destination="CT7-dB-qID" id="zna-To-HUj"/>
                             </connections>
                         </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem id="lNd-GU-0XY">
-                                <connections>
-                                    <segue destination="yfu-Pp-M7d" kind="show" id="hGd-4y-uqK"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="save" id="tJU-RF-drJ"/>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="lNd-GU-0XY">
+                            <connections>
+                                <segue destination="AjA-6v-tok" kind="show" id="LiW-vJ-xpN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="drawView" destination="BIg-6f-W6w" id="PeT-yk-9Vb"/>
@@ -119,6 +115,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1a-y7-EAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1801" y="741"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tIp-o8-DS0">
+            <objects>
+                <viewController id="09H-4x-Zs6" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oqo-7X-wCd"/>
+                        <viewControllerLayoutGuide type="bottom" id="NP5-Q8-Ty7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8qz-QF-bL3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="og4-QL-pYf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1943" y="1822"/>
         </scene>
         <!--New Uploaded Image-->
         <scene sceneID="tne-QT-ifu">
@@ -352,6 +366,6 @@
         <image name="defaultPhoto" width="540" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hGd-4y-uqK"/>
+        <segue reference="LiW-vJ-xpN"/>
     </inferredMetricsTieBreakers>
 </document>
