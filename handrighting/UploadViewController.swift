@@ -16,7 +16,7 @@ class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet weak var imageTextLabel: UILabel!             // The text calculated for the image
     @IBOutlet weak var photoImageView: UIImageView!         // The image
     @IBOutlet weak var openCVVersionLabel: UILabel!         // Open CV Version
-    @IBOutlet weak var saveButton: UIBarButtonItem!  // TODO! Not currently setup for anything.
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     /*
      This value is either passed by `ImageTableViewController` in `prepareForSegue(_:sender:)`
@@ -93,11 +93,17 @@ class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     // This method lets you configure a view controller before it's presented.
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if saveButton === sender {
+            let NavigationController = segue.destinationViewController as! UINavigationController
+            let DestinationViewController = NavigationController.topViewController as! ShowViewController
+            
+            // Get the info that generated this segue.
             let name = imageNameTextField.text ?? ""
             let photo = photoImageView.image
-            
-            // Set the image to be passed to  after the unwind segue.
-            image = Image(photo: photo!, name: name, text: nil)
+                
+            // Set the image to be passed.
+            let savedImage = Image(photo: photo!, name: name, text: nil)
+            DestinationViewController.image = savedImage
+        
         }
     }
     

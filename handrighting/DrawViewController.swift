@@ -13,8 +13,9 @@ class DrawViewController: UIViewController {
     // MARK: Properties
     
     @IBOutlet weak var drawView: DrawView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
-    
+    var photoImage: UIImage!         // The image
     
     // MARK: Actions
     
@@ -24,13 +25,24 @@ class DrawViewController: UIViewController {
         theDrawView.setNeedsDisplay()
     }
     
-    @IBAction func saveDrawing(sender: UIButton) {
+//    @IBAction func saveDrawing(sender: UIButton) {
+//        UIGraphicsBeginImageContext(view.frame.size)
+//        view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+//        let sourceImage = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//        UIImageWriteToSavedPhotosAlbum(sourceImage, nil, nil, nil)
+//        photoImage = sourceImage
+//    }
+    
+    func saveDrawingToPhotoLibrary() {
         UIGraphicsBeginImageContext(view.frame.size)
         view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let sourceImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         UIImageWriteToSavedPhotosAlbum(sourceImage, nil, nil, nil)
+        photoImage = sourceImage
     }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,16 +59,33 @@ class DrawViewController: UIViewController {
 
 
     // MARK: - Navigation
-    
     @IBAction func cancel(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // This method lets you configure a view controller before it's presented.
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        print("in func")
+        if saveButton === sender {
+            print("yes save")
+            print(sender)
+            //saveDrawingToPhotoLibrary()
+            let NavigationController = segue.destinationViewController as! UINavigationController
+            let DestinationViewController = NavigationController.topViewController as! ShowViewController
+            
+            // Get the info that generated this segue.
+            let name = "Drawing"
+            let photo = photoImage
+            
+            // Set the image to be passed.
+            let savedImage = Image(photo: photo!, name: name, text: nil)
+            DestinationViewController.image = savedImage
+            
+        } else {
+                print("no save")
+        }
     }
+    
 
 }
