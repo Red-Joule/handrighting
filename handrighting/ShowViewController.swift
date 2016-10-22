@@ -11,7 +11,6 @@ import UIKit
 class ShowViewController: UIViewController {
 
     // MARK: Properties
-    @IBOutlet weak var imageNameLabel: UILabel!
     @IBOutlet weak var imageTextLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
     
@@ -23,7 +22,6 @@ class ShowViewController: UIViewController {
         // Set up views if editing an existing Image.
         if let image = image {
             navigationItem.title = image.name
-            imageNameLabel.text   = image.name
             photoImageView.image = image.photo
             imageTextLabel.text = image.text
         }

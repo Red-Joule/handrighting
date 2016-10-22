@@ -11,9 +11,7 @@ import UIKit
 class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: Properties
-    @IBOutlet weak var imageNameLabel: UILabel!             // A name for the image
-    @IBOutlet weak var imageNameTextField: UITextField!     // To set the name for the image
-    @IBOutlet weak var imageTextLabel: UILabel!             // The text calculated for the image
+
     @IBOutlet weak var photoImageView: UIImageView!         // The image
     @IBOutlet weak var openCVVersionLabel: UILabel!         // Open CV Version
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -27,12 +25,6 @@ class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Handle the text field’s user input through delegate callbacks.
-        imageNameTextField.delegate = self
-        
-         // Enable the Save button only if the text field has a valid Meal name.
-        checkValidImageName()
-        
         openCVVersionLabel.text = OpenCVWrapper.openCVVersionString()
     }
 
@@ -41,29 +33,6 @@ class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: UITextFieldDelegate
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        // Hide the keyboard.
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        checkValidImageName()
-        imageNameLabel.text = textField.text
-    }
-    
-    func textFieldDidBeginEditing(textField: UITextField) {
-        // Disable the Save button while editing.
-        saveButton.enabled = false
-    }
-    
-    func checkValidImageName() {
-        // Disable the Save button if the text field is empty.
-        let text = imageNameTextField.text ?? ""
-        saveButton.enabled = !text.isEmpty
-    }
     
     // MARK: UIImagePickerControllerDelegate
     
@@ -99,12 +68,11 @@ class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             let DestinationViewController = NavigationController.topViewController as! ShowViewController
             
             // Get the info that generated this segue.
-            let name = imageNameTextField.text ?? ""
             let photo = photoImageView.image
             // let text = resultOfOpenCV
             
             // Set the image to be passed.
-            let savedImage = Image(photo: photo!, name: name, text: nil) // when resultOfOpenCV available, substitute nil for text
+            let savedImage = Image(photo: photo!, name: nil, text: nil) // when resultOfOpenCV available, substitute nil for text
             DestinationViewController.image = savedImage
         
         }
@@ -114,8 +82,6 @@ class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     // MARK: Actions
     
     @IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer) {
-        // Hide the keyboard.
-        imageNameTextField.resignFirstResponder()
         
         // UIImagePickerController is a view controller that lets a user pick media from their photo library.
         let imagePickerController = UIImagePickerController()
