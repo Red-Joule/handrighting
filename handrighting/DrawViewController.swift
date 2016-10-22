@@ -25,18 +25,9 @@ class DrawViewController: UIViewController {
         theDrawView.setNeedsDisplay()
     }
     
-//    @IBAction func saveDrawing(sender: UIButton) {
-//        UIGraphicsBeginImageContext(view.frame.size)
-//        view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
-//        let sourceImage = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//        UIImageWriteToSavedPhotosAlbum(sourceImage, nil, nil, nil)
-//        photoImage = sourceImage
-//    }
-    
     func saveDrawingToPhotoLibrary() {
-        UIGraphicsBeginImageContext(view.frame.size)
-        view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        UIGraphicsBeginImageContext(self.drawView.frame.size)
+        self.drawView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let sourceImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         UIImageWriteToSavedPhotosAlbum(sourceImage, nil, nil, nil)
@@ -46,7 +37,7 @@ class DrawViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.drawView.layer.borderWidth = 3.0;
+        self.drawView.layer.borderWidth = 1.0;
 
         // Do any additional setup after loading the view.
     }
@@ -66,10 +57,7 @@ class DrawViewController: UIViewController {
     
     // This method lets you configure a view controller before it's presented.
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("in func")
         if saveButton === sender {
-            print("yes save")
-            print(sender)
             saveDrawingToPhotoLibrary()
             let NavigationController = segue.destinationViewController as! UINavigationController
             let DestinationViewController = NavigationController.topViewController as! ShowViewController
@@ -82,8 +70,6 @@ class DrawViewController: UIViewController {
             let savedImage = Image(photo: photo, name: name, text: nil)
             DestinationViewController.image = savedImage
             
-        } else {
-            print("no save")
         }
     }
     
