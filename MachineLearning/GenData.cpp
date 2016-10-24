@@ -9,7 +9,7 @@
 #include<vector>
 
 // global variables ///////////////////////////////////////////////////////////////////////////////
-const int MIN_CONTOUR_AREA = 100;
+const int MIN_CONTOUR_AREA = 25;
 
 const int RESIZED_IMAGE_WIDTH = 20;
 const int RESIZED_IMAGE_HEIGHT = 30;
@@ -116,7 +116,7 @@ int main() {
 
                 // save classifications to file ///////////////////////////////////////////////////////
 
-    cv::FileStorage fsClassifications("classifications.xml", cv::FileStorage::WRITE);           // open the classifications file
+    cv::FileStorage fsClassifications("classifications.xml", cv::FileStorage::APPEND);           // open the classifications file
 
     if (fsClassifications.isOpened() == false) {                                                        // if the file was not opened successfully
         std::cout << "error, unable to open training classifications file, exiting program\n\n";        // show error message
@@ -128,7 +128,7 @@ int main() {
 
                 // save training images to file ///////////////////////////////////////////////////////
 
-    cv::FileStorage fsTrainingImages("images.xml", cv::FileStorage::WRITE);         // open the training images file
+    cv::FileStorage fsTrainingImages("images.xml", cv::FileStorage::APPEND);         // open the training images file
 
     if (fsTrainingImages.isOpened() == false) {                                                 // if the file was not opened successfully
         std::cout << "error, unable to open training images file, exiting program\n\n";         // show error message
