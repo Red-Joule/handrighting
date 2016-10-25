@@ -9,7 +9,7 @@
 #include<vector>
 
 // global variables ///////////////////////////////////////////////////////////////////////////////
-const int MIN_CONTOUR_AREA = 25;
+const int MIN_CONTOUR_AREA = 100;
 
 const int RESIZED_IMAGE_WIDTH = 20;
 const int RESIZED_IMAGE_HEIGHT = 30;
@@ -28,6 +28,16 @@ int main() {
 
     cv::Mat matClassificationInts;      // these are our training classifications, note we will have to perform some conversions before writing to file later
 
+	// First, read in any existing classifications
+
+	cv::FileStorage fsClassificationsInit("classifications.xml", cv::FileStorage::READ);
+    if (fsClassificationsInit.isOpened() == false) {                                                    // if the file was not opened successfully
+        std::cout << "error, unable to open training classifications file, a new one will be created";    // show message
+    } else {
+		fsClassificationsInit["classifications"] >> matClassificationInts;      // read classifications section into Mat classifications variable
+		fsClassificationsInit.release();                                        // close the classifications file
+	}
+
                                 // these are our training images, due to the data types that the KNN object KNearest requires, we have to declare a single Mat,
                                 // then append to it as though it's a vector, also we will have to perform some conversions before writing to file later
     cv::Mat matTrainingImagesAsFlattenedFloats;
@@ -45,7 +55,7 @@ int main() {
     /*                                    'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', */
     /*                                    'u', 'v', 'w', 'x', 'y', 'z' }; */
 
-    imgTrainingNumbers = cv::imread("training_chars.png");          // read in training numbers image
+    imgTrainingNumbers = cv::imread("a_m_handwriting.jpg");          // read in training numbers image
 
     if (imgTrainingNumbers.empty()) {                               // if unable to open image
         std::cout << "error: image not read from file\n\n";         // show error message on command line
@@ -57,7 +67,7 @@ int main() {
     cv::GaussianBlur(imgGrayscale,              // input image
         imgBlurred,                             // output image
         cv::Size(5, 5),                         // smoothing window width and height in pixels
-        0);                                     // sigma value, determines how much the image will be blurred, zero makes function choose the sigma value
+        0.25);                                     // sigma value, determines how much the image will be blurred, zero makes function choose the sigma value
 
                                                 // filter image from grayscale to black and white
     cv::adaptiveThreshold(imgBlurred,           // input image
@@ -116,7 +126,8 @@ int main() {
 
                 // save classifications to file ///////////////////////////////////////////////////////
 
-    cv::FileStorage fsClassifications("classifications.xml", cv::FileStorage::APPEND);           // open the classifications file
+
+    cv::FileStorage fsClassifications("classifications.xml", cv::FileStorage::WRITE);           // open the classifications file
 
     if (fsClassifications.isOpened() == false) {                                                        // if the file was not opened successfully
         std::cout << "error, unable to open training classifications file, exiting program\n\n";        // show error message
