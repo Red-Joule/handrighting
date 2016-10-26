@@ -18,10 +18,12 @@ const int RESIZED_IMAGE_HEIGHT = 30;
 int main(int argc, char const *argv[]) 
 {
     cv::Mat imgTrainingNumbers;         // input image
+	cv::Mat imgTrainingNumbersDisplay;  // copy for display
     cv::Mat imgGrayscale;               // 
     cv::Mat imgBlurred;                 // declare various images
     cv::Mat imgThresh;                  //
     cv::Mat imgThreshCopy;              //
+    cv::Mat imgThreshDisplay;           // copy for display
 
     // Take the training image filename as an input argument to facilitate training
 	if(argc < 2){
@@ -88,7 +90,9 @@ int main(int argc, char const *argv[])
         11,                                     // size of a pixel neighborhood used to calculate threshold value
         2);                                     // constant subtracted from the mean or weighted mean
 
-    cv::imshow("imgThresh", imgThresh);         // show threshold image for reference
+	imgThreshDisplay = imgThresh.clone();	
+	resize(imgThreshDisplay, imgThreshDisplay, cv::Size(imgThreshDisplay.cols/3, imgThreshDisplay.rows/3));
+    cv::imshow("imgThresh", imgThreshDisplay);         // show threshold image for reference
 
     imgThreshCopy = imgThresh.clone();          // make a copy of the thresh image, this in necessary b/c findContours modifies the image
 
@@ -111,7 +115,9 @@ int main(int argc, char const *argv[])
 
             cv::imshow("matROI", matROI);                               // show ROI image for reference
             cv::imshow("matROIResized", matROIResized);                 // show resized ROI image for reference
-            cv::imshow("imgTrainingNumbers", imgTrainingNumbers);       // show training numbers image, this will now have red rectangles drawn on it
+			imgTrainingNumbersDisplay = imgTrainingNumbers.clone();	
+			resize(imgTrainingNumbersDisplay, imgTrainingNumbersDisplay, cv::Size(imgTrainingNumbersDisplay.cols/2, imgTrainingNumbersDisplay.rows/2));
+            cv::imshow("imgTrainingNumbers", imgTrainingNumbersDisplay);       // show training numbers image, this will now have red rectangles drawn on it
 
             int intChar = cv::waitKey(0);           // get key press
 
