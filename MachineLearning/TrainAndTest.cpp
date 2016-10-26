@@ -83,6 +83,11 @@ int main(int argc, char const *argv[])
 
             // test ///////////////////////////////////////////////////////////////////////////////
 // testing image is a command line argument
+	if(argc < 2){
+		std::cout << "Enter an image filename as a parameter." << std::endl;
+		std::cout << "Example: TrainAndTest test1.png" << std::endl;
+		return 1;
+	}
     std::string test_chars = argv[1];
     cv::Mat matTestingNumbers = cv::imread(test_chars);            // read in the test numbers image
 
