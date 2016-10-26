@@ -24,6 +24,11 @@ int main(int argc, char const *argv[])
     cv::Mat imgThreshCopy;              //
 
     // Take the training image filename as an input argument to facilitate training
+	if(argc < 2){
+		std::cout << "Enter an image filename as a parameter." << std::endl;
+		std::cout << "Example: GenData training_chars.png" << std::endl;
+		return 1;
+	}
     std::string training_image = argv[1];
     imgTrainingNumbers = cv::imread(training_image); // read in training numbers image
 

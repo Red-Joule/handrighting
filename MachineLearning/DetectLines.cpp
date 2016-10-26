@@ -7,12 +7,17 @@
 using namespace cv;
 using namespace std;
 
-#define INPUT_FILE              "a_m_handwriting.jpg"
 #define OUTPUT_FOLDER_PATH      string("")
 
 int main(int argc, char* argv[])
 {
-    Mat large = imread(INPUT_FILE);
+	// Accept parameter for file name
+	if(argc < 2){
+		std::cout << "Enter an image filename as a parameter." << endl;
+		return 1;
+	}
+	std::string inputFile = argv[1];
+    Mat large = imread(inputFile);
     Mat rgb;
 
     // downsample and use it for processing
@@ -64,7 +69,7 @@ int main(int argc, char* argv[])
         }
     }
     imwrite(OUTPUT_FOLDER_PATH + string("rgb.jpg"), rgb);
-	cv::Mat imgout = cv::imread(INPUT_FILE);
+	cv::Mat imgout = cv::imread(inputFile);
 	resize(imgout, imgout, Size(imgout.cols/4,imgout.rows/4));
 	namedWindow( "Display Frame",CV_WINDOW_AUTOSIZE);
 	cv::imshow("output", imgout);
