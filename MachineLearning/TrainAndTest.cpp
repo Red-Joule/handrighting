@@ -36,7 +36,10 @@ public:
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-int main() {
+int main(int argc, char const *argv[]) 
+{
+
+
     std::vector<ContourWithData> allContoursWithData;           // declare empty vectors,
     std::vector<ContourWithData> validContoursWithData;         // we will fill these shortly
 
@@ -45,6 +48,8 @@ int main() {
     cv::Mat matClassificationInts;      // we will read the classification numbers into this variable as though it is a vector
 
     cv::FileStorage fsClassifications("classifications.xml", cv::FileStorage::READ);        // open the classifications file
+
+    
 
     if (fsClassifications.isOpened() == false) {                                                    // if the file was not opened successfully
         std::cout << "error, unable to open training classifications file, exiting program\n\n";    // show error message
@@ -77,8 +82,9 @@ int main() {
     kNearest->train(matTrainingImagesAsFlattenedFloats, cv::ml::ROW_SAMPLE, matClassificationInts);
 
             // test ///////////////////////////////////////////////////////////////////////////////
-
-    cv::Mat matTestingNumbers = cv::imread("test1.png");            // read in the test numbers image
+// testing image is a command line argument
+    std::string test_chars = argv[1];
+    cv::Mat matTestingNumbers = cv::imread(test_chars);            // read in the test numbers image
 
     if (matTestingNumbers.empty()) {                                // if unable to open image
         std::cout << "error: image not read from file\n\n";         // show error message on command line
