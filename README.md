@@ -17,3 +17,16 @@ http://blogs.wcode.org/2014/10/howto-install-build-and-use-opencv-macosx-10-10/
 
 ### alias for cmake
 alias runcmake="/Applications/CMake.app/Contents/bin/cmake ."
+
+
+######
+How to train data
+
+
+1) cd MachineLearning
+1-b) pre: if that has been run before, you need to delete the classifications.xml and images.xml files
+2) runcmake
+3) make
+4) ./GenData
+5) follow the prompts to test the data
+6) ./TrainAndTest
