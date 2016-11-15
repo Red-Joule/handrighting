@@ -15,5 +15,7 @@
 // Get OpenCV Version String
 +(NSString *) openCVVersionString;
 
+// Get String from Image
++(NSString *) getStringFromImage;
 
 @end

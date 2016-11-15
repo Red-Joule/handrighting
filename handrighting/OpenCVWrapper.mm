@@ -16,4 +16,11 @@
     return [NSString stringWithFormat:@"OpenCV Version %s", CV_VERSION];
 }
 
++(NSString *) getStringFromImage
+{
+    
+    const char * imageString = "STRING";
+    return [NSString stringWithFormat:@"%s", imageString];
+}
+
 @end

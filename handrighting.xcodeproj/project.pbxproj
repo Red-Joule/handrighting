@@ -15,6 +15,7 @@
 		37BBBA231DA3263300F8D05A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37BBBA211DA3263300F8D05A /* LaunchScreen.storyboard */; };
 		37BBBA2E1DA3263300F8D05A /* handrightingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BBBA2D1DA3263300F8D05A /* handrightingTests.swift */; };
 		37C2EB571DB835CB00BA7506 /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2EB561DB835CB00BA7506 /* ShowViewController.swift */; };
+		37DF4D2C1DDA98A200DBC3AF /* TrainAndTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37DF4D2A1DDA98A200DBC3AF /* TrainAndTest.cpp */; };
 		37ECC6081DB31723004BB9FF /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECC6071DB31723004BB9FF /* UploadViewController.swift */; };
 		37F0B7071DB588A300DDA479 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0B7061DB588A300DDA479 /* DrawViewController.swift */; };
 		37F0B7091DB58E9B00DDA479 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0B7081DB58E9B00DDA479 /* DrawView.swift */; };
@@ -49,6 +50,8 @@
 		37BBBA2D1DA3263300F8D05A /* handrightingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = handrightingTests.swift; sourceTree = "<group>"; };
 		37BBBA2F1DA3263300F8D05A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37C2EB561DB835CB00BA7506 /* ShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
+		37DF4D2A1DDA98A200DBC3AF /* TrainAndTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TrainAndTest.cpp; sourceTree = "<group>"; };
+		37DF4D2B1DDA98A200DBC3AF /* TrainAndTest.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TrainAndTest.hpp; sourceTree = "<group>"; };
 		37ECC6071DB31723004BB9FF /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		37F0B7061DB588A300DDA479 /* DrawViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
 		37F0B7081DB58E9B00DDA479 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
@@ -86,6 +89,8 @@
 			children = (
 				A3EC0D011DAAE92600291AF8 /* OpenCVWrapper.h */,
 				A3EC0D021DAAE92600291AF8 /* OpenCVWrapper.mm */,
+				37DF4D2A1DDA98A200DBC3AF /* TrainAndTest.cpp */,
+				37DF4D2B1DDA98A200DBC3AF /* TrainAndTest.hpp */,
 				37BBBA171DA3263300F8D05A /* handrighting */,
 				37BBBA2C1DA3263300F8D05A /* handrightingTests */,
 				37BBBA161DA3263300F8D05A /* Products */,
@@ -239,6 +244,7 @@
 				37ECC6081DB31723004BB9FF /* UploadViewController.swift in Sources */,
 				A3EC0D031DAAE92600291AF8 /* OpenCVWrapper.mm in Sources */,
 				37C2EB571DB835CB00BA7506 /* ShowViewController.swift in Sources */,
+				37DF4D2C1DDA98A200DBC3AF /* TrainAndTest.cpp in Sources */,
 				37F0B70C1DB58F0E00DDA479 /* Line.swift in Sources */,
 				37F6D1551DB3078700351F06 /* ChooseViewController.swift in Sources */,
 				37BBBA191DA3263300F8D05A /* AppDelegate.swift in Sources */,
