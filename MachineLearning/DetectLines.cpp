@@ -8,6 +8,8 @@ using namespace cv;
 using namespace std;
 
 #define OUTPUT_FOLDER_PATH      string("")
+#define RECT_HEIGHT 8
+#define RECT_WIDTH 8
 
 int main(int argc, char* argv[])
 {
@@ -36,7 +38,8 @@ int main(int argc, char* argv[])
 
     // connect horizontally oriented regions
     Mat connected;
-    morphKernel = getStructuringElement(MORPH_RECT, Size(150, 1));
+    morphKernel = getStructuringElement(MORPH_RECT, Size(150, 5));
+    /* morphKernel = getStructuringElement(MORPH_RECT, Size(150, 1)); */
     morphologyEx(bw, connected, MORPH_CLOSE, morphKernel);
 
     // find contours
@@ -60,7 +63,7 @@ int main(int argc, char* argv[])
 
         if (r > .25 /* assume at least 45% of the area is filled if it contains text */
             && 
-            (rect.height > 8 && rect.width > 8) /* constraints on region size */
+            (rect.height > RECT_HEIGHT && rect.width > RECT_WIDTH) /* constraints on region size */
             /* these two conditions alone are not very robust. better to use something 
             like the number of significant peaks in a horizontal projection as a third condition */
             )
@@ -70,9 +73,9 @@ int main(int argc, char* argv[])
     }
     imwrite(OUTPUT_FOLDER_PATH + string("rgb.jpg"), rgb);
 	cv::Mat imgout = cv::imread(inputFile);
-	resize(imgout, imgout, Size(imgout.cols/4,imgout.rows/4));
+	resize(imgout, imgout, Size(imgout.cols/2,imgout.rows/2));
 	namedWindow( "Display Frame",CV_WINDOW_AUTOSIZE);
-	cv::imshow("output", imgout);
+	cv::imshow("output", rgb);
 	int intChar = cv::waitKey(0);           // get key press
 
     return 0;
