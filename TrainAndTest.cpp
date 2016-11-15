@@ -46,7 +46,7 @@ public:
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-char * trainAndTest(int argc, char const *argv[])
+char * trainAndTest(char const * filename)
 {
     
     
@@ -94,14 +94,14 @@ char * trainAndTest(int argc, char const *argv[])
     // test ///////////////////////////////////////////////////////////////////////////////
     char * output = nullptr;
     // testing image is a command line argument
-    if(argc < 2){
-        std::cout << "Enter an image filename as a parameter." << std::endl;
-        std::cout << "Example: TrainAndTest test1.png" << std::endl;
-        output[0] = '1';
-        return output;
-    }
-    std::string test_chars = argv[1];
-    cv::Mat matTestingNumbers = cv::imread(test_chars);            // read in the test numbers image
+//    if(argc < 2){
+//        std::cout << "Enter an image filename as a parameter." << std::endl;
+//        std::cout << "Example: TrainAndTest test1.png" << std::endl;
+//        output[0] = '1';
+//        return output;
+//    }
+    std::cout << filename;
+    cv::Mat matTestingNumbers = cv::imread(filename);            // read in the test numbers image
     
     if (matTestingNumbers.empty()) {                                // if unable to open image
         std::cout << "error: image not read from file\n\n";         // show error message on command line

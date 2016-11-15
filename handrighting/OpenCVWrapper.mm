@@ -8,6 +8,7 @@
 
 #import "OpenCVWrapper.h"
 #import <opencv2/opencv.hpp>
+#import "TrainAndTest.hpp"
 
 @implementation OpenCVWrapper
 
@@ -19,7 +20,7 @@
 +(NSString *) getStringFromImage
 {
     
-    const char * imageString = "STRING";
+    const char * imageString = trainAndTest("test1.png");
     return [NSString stringWithFormat:@"%s", imageString];
 }
 

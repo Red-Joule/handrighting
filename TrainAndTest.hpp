@@ -14,7 +14,7 @@
 extern "C" {
 #endif
     
-    char * trainAndTest();
+    char * trainAndTest(const char *filename);
     
 #ifdef __cplusplus
 }
