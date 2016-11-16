@@ -9,7 +9,7 @@
 #include<vector>
 
 // global variables ///////////////////////////////////////////////////////////////////////////////
-const int MIN_CONTOUR_AREA = 100;
+const int MIN_CONTOUR_AREA = 40;
 
 const int RESIZED_IMAGE_WIDTH = 20;
 const int RESIZED_IMAGE_HEIGHT = 30;
