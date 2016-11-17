@@ -57,8 +57,8 @@ char * trainAndTest(char const * filename)
     
     cv::Mat matClassificationInts;      // we will read the classification numbers into this variable as though it is a vector
     
+
     cv::FileStorage fsClassifications("classifications.xml", cv::FileStorage::READ);        // open the classifications file
-    
     
     
     if (fsClassifications.isOpened() == false) {                                                    // if the file was not opened successfully

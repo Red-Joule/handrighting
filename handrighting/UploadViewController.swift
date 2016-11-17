@@ -24,8 +24,7 @@ class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        openCVVersionLabel.text = OpenCVWrapper.getStringFromImage()
+        openCVVersionLabel.text = OpenCVWrapper.trainAndTest()
     }
 
     override func didReceiveMemoryWarning() {
