@@ -7,11 +7,12 @@
 load crop_vals;
 % preallocate dimensions of rects
 rects = zeros(62,4);
-chr = char(ones(62,1));
-% create vector of characters and 
-% matrix of rectangle crop dimensions
+
+% create vector of characters and rectangle crop dimensions andmatrices
+rect_vals = crop_data.crop_rect_vals;
+
 for i = 1:length(crop_data.crop_rect_vals)
-rects(i,:) = str2num(crop_data.crop_rect_vals{i});
+rects(i,:) = str2num(rect_vals{i});
 chr(i) = crop_data.character_vals{i};
 end
 

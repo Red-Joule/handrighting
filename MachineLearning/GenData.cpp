@@ -39,23 +39,27 @@ int main(int argc, char const *argv[])
     std::vector<std::vector<cv::Point> > ptContours;        // declare contours vector
     std::vector<cv::Vec4i> v4iHierarchy;                    // declare contours hierarchy
 
-    cv::Mat matClassificationInts;      // these are our training classifications, note we will have to perform some conversions before writing to file later
+    cv::Mat matClassificationInts;      // training classifications
+    cv::Mat matTrainingImagesAsFlattenedFloats; // training images
 
-	// First, read in any existing classifications
+	// First, read in any existing classifications and images
 
 	cv::FileStorage fsClassificationsInit("classifications.xml", cv::FileStorage::READ);
-    if (fsClassificationsInit.isOpened() == false) {                                                    // if the file was not opened successfully
-        std::cout << "error, unable to open training classifications file, a new one will be created";    // show message
+    if (fsClassificationsInit.isOpened() == false) {               // if the file was not opened successfully
+        std::cout << "Creating new classifications.xml as one was not found." << std::endl;    // show message
     } else {
-		fsClassificationsInit["classifications"] >> matClassificationInts;      // read classifications section into Mat classifications variable
+		fsClassificationsInit["classifications"] >> matClassificationInts;      // read classifications section into Mat classifications 
 		fsClassificationsInit.release();                                        // close the classifications file
 	}
+	cv::FileStorage fsImagesInit("images.xml", cv::FileStorage::READ);
+    if (fsImagesInit.isOpened() == false) {               // if the file was not opened successfully
+        std::cout << "Creating new images.xml as one was not found" << std::endl;    // show message
+    } else {
+		fsImagesInit["images"] >> matTrainingImagesAsFlattenedFloats;      // read classifications section into Mat classifications 
+		fsImagesInit.release();                                        // close the classifications file
+	}
 
-                                // these are our training images, due to the data types that the KNN object KNearest requires, we have to declare a single Mat,
-                                // then append to it as though it's a vector, also we will have to perform some conversions before writing to file later
-    cv::Mat matTrainingImagesAsFlattenedFloats;
 
-                                // possible chars we are interested in are digits 0 through 9 and capital letters A through Z, lowercase letters a through z, put these in vector intValidChars
     std::vector<int> intValidChars = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
                                        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
                                        'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
@@ -64,10 +68,6 @@ int main(int argc, char const *argv[])
 									   'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 
 									   'y', 'z' };
 
-    // alternate vector. 
-    /* std::vector<int> intValidChars = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', */
-    /*                                    'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', */
-    /*                                    'u', 'v', 'w', 'x', 'y', 'z' }; */
 
     if (imgTrainingNumbers.empty()) {                               // if unable to open image
         std::cout << "error: image not read from file\n\n";         // show error message on command line
@@ -79,7 +79,7 @@ int main(int argc, char const *argv[])
     cv::GaussianBlur(imgGrayscale,              // input image
         imgBlurred,                             // output image
         cv::Size(5, 5),                         // smoothing window width and height in pixels
-        0.25);                                     // sigma value, determines how much the image will be blurred, zero makes function choose the sigma value
+        0.25);                                  // sigma value, determines how much the image will be blurred, zero makes function choose the sigma value
 
                                                 // filter image from grayscale to black and white
     cv::adaptiveThreshold(imgBlurred,           // input image
@@ -153,9 +153,9 @@ int main(int argc, char const *argv[])
     fsClassifications << "classifications" << matClassificationInts;        // write classifications into classifications section of classifications file
     fsClassifications.release();                                            // close the classifications file
 
-                // save training images to file ///////////////////////////////////////////////////////
+    // save training images to file ///////////////////////////////////////////////////////
 
-    cv::FileStorage fsTrainingImages("images.xml", cv::FileStorage::APPEND);         // open the training images file
+    cv::FileStorage fsTrainingImages("images.xml", cv::FileStorage::WRITE);         // open the training images file
 
     if (fsTrainingImages.isOpened() == false) {                                                 // if the file was not opened successfully
         std::cout << "error, unable to open training images file, exiting program\n\n";         // show error message
