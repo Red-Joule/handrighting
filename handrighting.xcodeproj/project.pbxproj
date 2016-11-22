@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27E79B721DE3D4FD00B12C42 /* Spellcheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E79B711DE3D4FD00B12C42 /* Spellcheck.swift */; };
 		3745695E1DA5C8D70014A3DB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3745695D1DA5C8D70014A3DB /* Image.swift */; };
 		3745695F1DA5C8D70014A3DB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3745695D1DA5C8D70014A3DB /* Image.swift */; };
 		37BBBA191DA3263300F8D05A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BBBA181DA3263300F8D05A /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27E79B711DE3D4FD00B12C42 /* Spellcheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spellcheck.swift; sourceTree = "<group>"; };
 		3745695D1DA5C8D70014A3DB /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		37BBBA151DA3263300F8D05A /* handrighting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = handrighting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37BBBA181DA3263300F8D05A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				37F6D1541DB3078700351F06 /* ChooseViewController.swift */,
 				37F0B7081DB58E9B00DDA479 /* DrawView.swift */,
 				37F0B70B1DB58F0E00DDA479 /* Line.swift */,
+				27E79B711DE3D4FD00B12C42 /* Spellcheck.swift */,
 				37BBBA1F1DA3263300F8D05A /* Assets.xcassets */,
 				37BBBA211DA3263300F8D05A /* LaunchScreen.storyboard */,
 				37BBBA241DA3263300F8D05A /* Info.plist */,
@@ -240,6 +243,7 @@
 				A3EC0D031DAAE92600291AF8 /* OpenCVWrapper.mm in Sources */,
 				37C2EB571DB835CB00BA7506 /* ShowViewController.swift in Sources */,
 				37F0B70C1DB58F0E00DDA479 /* Line.swift in Sources */,
+				27E79B721DE3D4FD00B12C42 /* Spellcheck.swift in Sources */,
 				37F6D1551DB3078700351F06 /* ChooseViewController.swift in Sources */,
 				37BBBA191DA3263300F8D05A /* AppDelegate.swift in Sources */,
 			);

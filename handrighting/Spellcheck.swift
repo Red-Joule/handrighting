@@ -15,21 +15,19 @@ class Spellcheck {
     
     init( raw_text: String) {
         self.raw_text = raw_text
-        self.corrected_text = raw_text
+        self.corrected_text = raw_text // set the corrected_text to equal the raw_text by default
     }
     
-    func getCorrection() {
-        let resultOfOpenCV = self.raw_text
-        
+    func makeCorrection() {        
         // Check spelling of the word
         let textChecker = UITextChecker()
         let misspelledRange = textChecker.rangeOfMisspelledWordInString(
-            resultOfOpenCV, range: NSRange(0..<resultOfOpenCV.utf16.count),
+            self.raw_text, range: NSRange(0..<self.raw_text.utf16.count),
             startingAt: 0, wrap: false, language: "en_US")
         
         if misspelledRange.location != NSNotFound,
             let guesses = textChecker.guessesForWordRange(
-                misspelledRange, inString: resultOfOpenCV, language: "en_US") as? [String]
+                misspelledRange, inString: self.raw_text, language: "en_US") as? [String]
         {
             // set the misspelled word first guess as the correct string
             self.corrected_text = guesses.first!
