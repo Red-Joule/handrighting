@@ -61,18 +61,39 @@ class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if saveButton === sender {
             
-            // Run the OpenCV OCR on the image
-            // resultOfOpenCV = ????
             
             let NavigationController = segue.destinationViewController as! UINavigationController
             let DestinationViewController = NavigationController.topViewController as! ShowViewController
             
             // Get the info that generated this segue.
             let photo = photoImageView.image
-            // let text = resultOfOpenCV
+
+            // Run the OpenCV OCR on the image and save as resultOfOpenCV
+            let resultOfOpenCV = "hipstar"
+
+            // Check spelling of the word
+            let textChecker = UITextChecker()
+            let misspelledRange = textChecker.rangeOfMisspelledWordInString(
+                resultOfOpenCV, range: NSRange(0..<resultOfOpenCV.utf16.count),
+                startingAt: 0, wrap: false, language: "en_US")
+            var correctedStr = ""
+            
+            if misspelledRange.location != NSNotFound,
+                let guesses = textChecker.guessesForWordRange(
+                    misspelledRange, inString: resultOfOpenCV, language: "en_US") as? [String]
+            {
+                // set the misspelled word first guess as the correct string
+                correctedStr = guesses.first!
+                print("Possible guesses: \(guesses)")
+            } else {
+                // not a misspelled word or word not found so simply use the resultOfOpenCV as the word to display
+                correctedStr = resultOfOpenCV
+                print("Not found")
+                
+            }
             
             // Set the image to be passed.
-            let savedImage = Image(photo: photo!, name: nil, text: "resultOfOpenCV") // when resultOfOpenCV available, substitute nil for text
+            let savedImage = Image(photo: photo!, name: nil, text: correctedStr) // when resultOfOpenCV available, substitute nil for text
             DestinationViewController.image = savedImage
         
         }
