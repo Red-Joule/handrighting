@@ -6,7 +6,7 @@
 //  Copyright © 2016 Red Joule. All rights reserved.
 //
 
-#import "OpenCVWrapper.h"
+#import "OpenCVWrapper.hpp"
 #import <opencv2/opencv.hpp>
 #import "TrainAndTest.hpp"
 
@@ -52,8 +52,30 @@ public:
     
 };
 
-+(NSString *) trainAndTest//:(NSString *)filename // TODO (Luke): Allow for images being passed in
+
++(NSString *) trainAndTest: (UIImage *)image
 {
+        // Convert the UIImage to a cv::Mat
+        CGColorSpaceRef colorSpace = CGImageGetColorSpace(image.CGImage);
+        CGFloat cols = image.size.width;
+        CGFloat rows = image.size.height;
+        
+        cv::Mat matTestingNumbers(rows, cols, CV_8UC4); // 8 bits per component, 4 channels
+
+        CGContextRef contextRef = CGBitmapContextCreate(matTestingNumbers.data,     // Pointer to backing data
+                                                        cols,                       // Width of bitmap
+                                                        rows,                       // Height of bitmap
+                                                        8,                          // Bits per component
+                                                        matTestingNumbers.step[0],  // Bytes per row
+                                                        colorSpace,                 // Colorspace
+                                                        kCGImageAlphaNoneSkipLast |
+                                                        kCGBitmapByteOrderDefault); // Bitmap info flags
+    
+        CGContextDrawImage(contextRef, CGRectMake(0, 0, cols, rows), image.CGImage);
+        CGContextRelease(contextRef);
+    
+    
+    
         std::vector<ContourWithData> allContoursWithData;           // declare empty vectors,
         std::vector<ContourWithData> validContoursWithData;         // we will fill these shortly
         
@@ -101,7 +123,6 @@ public:
     
     
     NSString *imagesPath = [[NSBundle mainBundle] pathForResource:@"images.xml" ofType:nil];
-;
     
     
     
@@ -125,19 +146,7 @@ public:
         
         // test ///////////////////////////////////////////////////////////////////////////////
         char * output = nullptr;
-        // testing image is a command line argument
-        //    if(argc < 2){
-        //        std::cout << "Enter an image filename as a parameter." << std::endl;
-        //        std::cout << "Example: TrainAndTest test1.png" << std::endl;
-        //        output[0] = '1';
-        //        return output;
-        //    }
-    
-    NSString *fileNamePath = [[NSBundle mainBundle] pathForResource:@"test1.png" ofType:nil];
-;
 
-        cv::Mat matTestingNumbers = cv::imread([fileNamePath UTF8String]);            // read in the test numbers image
-        
         if (matTestingNumbers.empty()) {                                // if unable to open image
             std::cout << "error: image not read from file\n\n";         // show error message on command line
             output[0] = '0';

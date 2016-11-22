@@ -15,6 +15,6 @@
 // Get OpenCV Version String
 +(NSString *) openCVVersionString;
 
++(NSString *) trainAndTest: (UIImage *)image;
 
-+(NSString *) trainAndTest;
 @end
