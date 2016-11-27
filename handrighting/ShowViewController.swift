@@ -23,7 +23,9 @@ class ShowViewController: UIViewController {
         if let image = image {
             navigationItem.title = image.name
             photoImageView.image = image.photo
-            imageTextLabel.text = image.text
+            photoImageView.accessibilityIdentifier = "test2.png"
+            imageTextLabel.text = OpenCVWrapper.trainAndTest(photoImageView.image)
+
         }
 
     }

@@ -70,7 +70,7 @@ class DrawViewController: UIViewController {
             // Get the info that generated this segue.
             let name = "Drawing"
             let photo = photoImage
-            // let text = resultOfOpenCV
+            // let text = OpenCVWrapper.getStringFromImage()
             
             // Set the image to be passed.
             let savedImage = Image(photo: photo, name: name, text: "resultOfOpenCV") // when resultOfOpenCV availabe, substitute nil for text
