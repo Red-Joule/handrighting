@@ -1,9 +1,9 @@
 // GenData.cpp
 
-#include<opencv2/core/core.hpp>
-#include<opencv2/highgui/highgui.hpp>
-#include<opencv2/imgproc/imgproc.hpp>
-#include<opencv2/ml/ml.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/ml/ml.hpp>
 
 #include<iostream>
 #include<vector>
@@ -26,12 +26,13 @@ int main(int argc, char const *argv[])
     cv::Mat imgThreshDisplay;           // copy for display
 
     // Take the training image filename as an input argument to facilitate training
-	if(argc < 2){
+	if(argc < 3){
 		std::cout << "Enter an image filename as a parameter." << std::endl;
-		std::cout << "Example: GenData training_chars.png" << std::endl;
+		std::cout << "Example: GenData training_chars.png A" << std::endl;
 		return 1;
 	}
     std::string training_image = argv[1];
+    int training_letter_ascii = argv[2][0];
     imgTrainingNumbers = cv::imread(training_image); // read in training numbers image
 
 
@@ -119,7 +120,9 @@ int main(int argc, char const *argv[])
 			resize(imgTrainingNumbersDisplay, imgTrainingNumbersDisplay, cv::Size(imgTrainingNumbersDisplay.cols/2, imgTrainingNumbersDisplay.rows/2));
             cv::imshow("imgTrainingNumbers", imgTrainingNumbersDisplay);       // show training numbers image, this will now have red rectangles drawn on it
 
-            int intChar = cv::waitKey(0);           // get key press
+            //WILL HAVE TO CHANGE THIS WHEN WE AUTOMATE
+            //int intChar = cv::waitKey(0);           // get key press
+            int intChar = training_letter_ascii;
 
             if (intChar == 27) {        // if esc key was pressed
                 return(0);              // exit program

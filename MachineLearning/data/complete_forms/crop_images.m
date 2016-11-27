@@ -1,6 +1,6 @@
-%% Crop images and then create composite image    
+%% Crop images to later create composite image    
 % Create array of image names
-    s = dir;
+    s = dir('*.png');
     form_image = {s.name};
     no_of_forms = length(form_image);
     
@@ -16,16 +16,26 @@ chr(i) = crop_data.character_vals{i};
 end
 
 %% loop through each letter, and within that loop go through each form to get that letter
-for i = 1:length(chr)
-    for ii = 1:no_of_forms;
-
+for i = 27:length(chr)
+    for ii = 1:no_of_forms
     %% set first index to 'A', 65
     character_value = i + 64;
-    image = form_image(ii);
-    % crop image and assign it to
-    cropped_image = imcrop(image, rects(i));
-   % image_name = strcat(character name + loop number);
-    %imwrite(cropped_image, image_name);
+    image = form_image{ii};
+    image = imread(image);
+    % crop image according to rectangle crop vals
+    cropped_image = imcrop(image, rects(i,:));
+    % assign name to image based on its letter and the form it came from
+    image_name = strcat(char(chr(i)) + string(ii) + '.png');
+    % change into the correct folder to save it.
+    if i < 27
+        newFolder = char(chr(i));
+    else
+        newFolder = strcat(char(chr(i)), 'small');
+    end
+    oldFolder = cd(newFolder);
+    % in that folder, save the cropped image
+    imwrite(cropped_image, char(image_name));
+    cd(oldFolder);
     end
 end
 
