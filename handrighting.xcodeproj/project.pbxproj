@@ -53,6 +53,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		37126F521DEA645D00B2FF76 /* OpenCVWrapper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OpenCVWrapper.hpp; sourceTree = "<group>"; };
 		3745695D1DA5C8D70014A3DB /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		37BBBA151DA3263300F8D05A /* handrighting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = handrighting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37BBBA181DA3263300F8D05A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		A3C27EE31DDD49B400F613CB /* classifications.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = classifications.xml; path = MachineLearning/classifications.xml; sourceTree = "<group>"; };
 		A3EC0CFF1DAAE92500291AF8 /* handrighting-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "handrighting-Bridging-Header.h"; path = "handrighting/handrighting-Bridging-Header.h"; sourceTree = "<group>"; };
 		A3EC0D001DAAE92500291AF8 /* handrightingTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "handrightingTests-Bridging-Header.h"; path = "handrighting/handrightingTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		A3EC0D011DAAE92600291AF8 /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenCVWrapper.h; path = handrighting/OpenCVWrapper.h; sourceTree = "<group>"; };
 		A3EC0D021DAAE92600291AF8 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = OpenCVWrapper.mm; path = handrighting/OpenCVWrapper.mm; sourceTree = "<group>"; };
 		A3FB09AB1DDB76120015A33D /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,8 +103,8 @@
 		37BBBA0C1DA3263300F8D05A = {
 			isa = PBXGroup;
 			children = (
-				A3EC0D011DAAE92600291AF8 /* OpenCVWrapper.h */,
 				A3EC0D021DAAE92600291AF8 /* OpenCVWrapper.mm */,
+				37126F521DEA645D00B2FF76 /* OpenCVWrapper.hpp */,
 				37DF4D2A1DDA98A200DBC3AF /* TrainAndTest.cpp */,
 				37DF4D2B1DDA98A200DBC3AF /* TrainAndTest.hpp */,
 				A3C27EE01DDD2FEF00F613CB /* Documents */,
