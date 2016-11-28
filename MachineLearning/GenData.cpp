@@ -5,11 +5,11 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/ml/ml.hpp>
 
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 
 // global variables ///////////////////////////////////////////////////////////////////////////////
-const int MIN_CONTOUR_AREA = 30;
+const int MIN_CONTOUR_AREA = 1000;
 
 const int RESIZED_IMAGE_WIDTH = 20;
 const int RESIZED_IMAGE_HEIGHT = 30;
@@ -103,8 +103,9 @@ int main(int argc, char const *argv[])
         cv::RETR_EXTERNAL,                      // retrieve the outermost contours only
         cv::CHAIN_APPROX_SIMPLE);               // compress horizontal, vertical, and diagonal segments and leave only their end points
 
+    bool found_one = false;
     for (int i = 0; i < ptContours.size(); i++) {                           // for each contour
-        if (cv::contourArea(ptContours[i]) > MIN_CONTOUR_AREA) {                // if contour is big enough to consider
+        if (cv::contourArea(ptContours[i]) > MIN_CONTOUR_AREA && !found_one) {                // if contour is big enough to consider
             cv::Rect boundingRect = cv::boundingRect(ptContours[i]);                // get the bounding rect
 
             cv::rectangle(imgTrainingNumbers, boundingRect, cv::Scalar(0, 0, 255), 2);      // draw red rectangle around each contour as we ask user for input
@@ -116,18 +117,18 @@ int main(int argc, char const *argv[])
 
             cv::imshow("matROI", matROI);                               // show ROI image for reference
             cv::imshow("matROIResized", matROIResized);                 // show resized ROI image for reference
-			imgTrainingNumbersDisplay = imgTrainingNumbers.clone();	
-			resize(imgTrainingNumbersDisplay, imgTrainingNumbersDisplay, cv::Size(imgTrainingNumbersDisplay.cols/2, imgTrainingNumbersDisplay.rows/2));
+            imgTrainingNumbersDisplay = imgTrainingNumbers.clone(); 
+            resize(imgTrainingNumbersDisplay, imgTrainingNumbersDisplay, cv::Size(imgTrainingNumbersDisplay.cols/2, imgTrainingNumbersDisplay.rows/2));
             cv::imshow("imgTrainingNumbers", imgTrainingNumbersDisplay);       // show training numbers image, this will now have red rectangles drawn on it
 
             //WILL HAVE TO CHANGE THIS WHEN WE AUTOMATE
-            //int intChar = cv::waitKey(0);           // get key press
+            // int intChar = cv::waitKey(0);           // get key press
             int intChar = training_letter_ascii;
 
             if (intChar == 27) {        // if esc key was pressed
                 return(0);              // exit program
             } else if (std::find(intValidChars.begin(), intValidChars.end(), intChar) != intValidChars.end()) {     // else if the char is in the list of chars we are looking for . . .
-
+                found_one = true;
                 matClassificationInts.push_back(intChar);       // append classification char to integer list of chars
 
                 cv::Mat matImageFloat;                          // now add the training image (some conversion is necessary first) . . .

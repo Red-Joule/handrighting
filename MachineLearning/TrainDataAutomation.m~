@@ -1,5 +1,6 @@
 %% Get a list of all files and folders in this folder.
-files = dir;
+% files = dir;
+files = dir('data/complete_forms');
 % Get a logical vector that tells which is a directory.
 dirFlags = [files.isdir];
 % Extract only those that are directories.
@@ -10,17 +11,16 @@ subFolders = files(dirFlags);
 % 	fprintf('Sub folder #%d = %s\n', k, subFolders(k).name);
 % end
 
-for i = 3:length(subFolders)
-    newFolder = subFolders(i).name;
-    oldFolder = cd(newFolder);
-    s = dir('*.png');
+% for i = 3:length(subFolders)
+for i = 3:3
+    image_folder = subFolders(i).name;
+    images_in_folder = strcat('data/complete_forms/', image_folder, '/*.png');
+    s = dir(images_in_folder);
     for ii = 1:length(s)
         form_image = {s.name};
-        process_this_image = ['../../../GenData ' form_image{ii} ' ' form_image{ii}(1)];
-        
-        system(process_this_image);
+        sys_command = ['./GenData ' form_image{ii} ' ' form_image{ii}(1)]
+%         system(process_this_image);
         
         
     end
-    cd(oldFolder);
 end
