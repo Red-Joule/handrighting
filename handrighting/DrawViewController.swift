@@ -69,17 +69,18 @@ class DrawViewController: UIViewController {
             
             // Get the info that generated this segue.
             let name = "Drawing"
-            let photo = photoImage
+//            let photo = photoImage
 
             // Run the OpenCV OCR on the image and save as resultOfOpenCV
-            let resultOfOpenCV = "drawring"
+//            let resultOfOpenCV = "drawring"
+            let resultOfOpenCV = "bal"
             
             // Check spelling of the word
             let word = Spellcheck(raw_text: resultOfOpenCV)
             word.makeCorrection()
-            
+            word.createImage(word.corrected_text)
             // Set the image to be passed.
-            let savedImage = Image(photo: photo, name: name, text: word.corrected_text) // when resultOfOpenCV availabe, substitute nil for text
+            let savedImage = Image(photo: word.result_image!, name: name, text: word.corrected_text) // when resultOfOpenCV availabe, substitute nil for text
             DestinationViewController.image = savedImage
             
         }

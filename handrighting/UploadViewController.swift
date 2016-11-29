@@ -66,17 +66,18 @@ class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             let DestinationViewController = NavigationController.topViewController as! ShowViewController
             
             // Get the info that generated this segue.
-            let photo = photoImageView.image
+//            let photo = photoImageView.image
 
             // Run the OpenCV OCR on the image and save as resultOfOpenCV
-            let resultOfOpenCV = "uppload"
+//            let resultOfOpenCV = "uppload"
+            let resultOfOpenCV = "kab"
 
             // Check spelling of the word
             let word = Spellcheck(raw_text: resultOfOpenCV)
             word.makeCorrection()
-            
+            word.createImage(word.corrected_text)
             // Set the image to be passed.
-            let savedImage = Image(photo: photo!, name: nil, text: word.corrected_text) // when resultOfOpenCV available, substitute nil for text
+            let savedImage = Image(photo: word.result_image!, name: nil, text: word.corrected_text) // when resultOfOpenCV available, substitute nil for text
             DestinationViewController.image = savedImage
         
         }

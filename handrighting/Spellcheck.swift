@@ -12,6 +12,7 @@ import UIKit
 class Spellcheck {
     var raw_text: String
     var corrected_text: String
+    var result_image: UIImage!
     
     init( raw_text: String) {
         self.raw_text = raw_text
@@ -39,4 +40,39 @@ class Spellcheck {
         }
     }
     
+    func createImage(in_str: String) {
+        var letterImages: [UIImage] = []
+        for i in in_str.characters {
+            let fname = String(i) + "1.png"
+            letterImages.append(UIImage(named: fname)!)
+        }
+        self.result_image = getMixedImg(letterImages)
+    }
+    
+}
+
+func getMixedImg(imgarray: [UIImage]) -> UIImage {
+    
+    var height = CGFloat(0)
+    var width = CGFloat(0)
+    for img in imgarray {
+        height = img.size.height
+        width += img.size.width
+    }
+    let size = CGSizeMake(width, height)
+    
+    UIGraphicsBeginImageContext(size)
+
+    let const_height = 30
+    let const_width = 20
+    var count = 0
+    for img in imgarray {
+        img.drawInRect(CGRectMake(CGFloat(count*const_width), 0, CGFloat(const_width), CGFloat(const_height)))
+        count += 1
+    }
+    
+    let finalImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    return finalImage
 }
