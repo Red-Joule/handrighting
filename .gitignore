@@ -7,3 +7,4 @@ OpenCV
 CMakeCache.txt
 CMakeFiles
 Makefile
+opencv2.framework/*
