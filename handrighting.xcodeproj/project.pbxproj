@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3745695E1DA5C8D70014A3DB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3745695D1DA5C8D70014A3DB /* Image.swift */; };
 		3745695F1DA5C8D70014A3DB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3745695D1DA5C8D70014A3DB /* Image.swift */; };
+		37B798641DED0B3E009AA7EB /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B798631DED0B3E009AA7EB /* opencv2.framework */; };
 		37BBBA191DA3263300F8D05A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BBBA181DA3263300F8D05A /* AppDelegate.swift */; };
 		37BBBA1E1DA3263300F8D05A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37BBBA1C1DA3263300F8D05A /* Main.storyboard */; };
 		37BBBA201DA3263300F8D05A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37BBBA1F1DA3263300F8D05A /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 /* Begin PBXFileReference section */
 		37126F521DEA645D00B2FF76 /* OpenCVWrapper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OpenCVWrapper.hpp; sourceTree = "<group>"; };
 		3745695D1DA5C8D70014A3DB /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		37B798631DED0B3E009AA7EB /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		37BBBA151DA3263300F8D05A /* handrighting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = handrighting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37BBBA181DA3263300F8D05A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37BBBA1D1DA3263300F8D05A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37B798641DED0B3E009AA7EB /* opencv2.framework in Frameworks */,
 				A3FB09AC1DDB76120015A33D /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +110,7 @@
 				37126F521DEA645D00B2FF76 /* OpenCVWrapper.hpp */,
 				37DF4D2A1DDA98A200DBC3AF /* TrainAndTest.cpp */,
 				37DF4D2B1DDA98A200DBC3AF /* TrainAndTest.hpp */,
+				37B798631DED0B3E009AA7EB /* opencv2.framework */,
 				A3C27EE01DDD2FEF00F613CB /* Documents */,
 				37BBBA171DA3263300F8D05A /* handrighting */,
 				37BBBA2C1DA3263300F8D05A /* handrightingTests */,
@@ -416,6 +420,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/handrighting",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = handrighting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
@@ -435,6 +440,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/handrighting",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = handrighting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
