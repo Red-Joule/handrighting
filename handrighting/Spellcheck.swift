@@ -43,7 +43,7 @@ class Spellcheck {
     func createImage(in_str: String) {
         var letterImages: [UIImage] = []
         for i in in_str.characters {
-            let fname = String(i) + "1.png"
+            let fname = String(i) + "small.png"
             letterImages.append(UIImage(named: fname)!)
         }
         self.result_image = getMixedImg(letterImages)
