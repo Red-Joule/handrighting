@@ -1,12 +1,12 @@
 // TrainAndTest.cpp
 
-#include<opencv2/core/core.hpp>
-#include<opencv2/highgui/highgui.hpp>
-#include<opencv2/imgproc/imgproc.hpp>
-#include<opencv2/ml/ml.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/ml/ml.hpp>
 
-#include<iostream>
-#include<sstream>
+#include <iostream>
+#include <sstream>
 
 // global variables ///////////////////////////////////////////////////////////////////////////////
 const int MIN_CONTOUR_AREA = 100;
@@ -178,7 +178,7 @@ int main(int argc, char const *argv[])
 
     cv::imshow("matTestingNumbers", matTestingNumbers);     // show input image with green boxes drawn around found digits
 
-    cv::waitKey(0);                                         // wait for user key press
+    // cv::waitKey(0);                                         // wait for user key press
 
     return(0);
 }
