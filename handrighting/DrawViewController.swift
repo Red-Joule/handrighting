@@ -14,7 +14,14 @@ class DrawViewController: UIViewController {
     
     @IBOutlet weak var drawView: DrawView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var givenImageView: UIImageView!
     
+    // Keep track of the sample photos
+    let numGivenPhotos = Int(6);
+    let givenPhotos = ["BUS", "CAR", "CAT", "DOG", "FISH", "SOCK"];
+    let randomNum = Int(arc4random());
+    
+    var index: Int!;
     var photoImage: UIImage!         // The image
     
     // MARK: Actions
@@ -39,7 +46,17 @@ class DrawViewController: UIViewController {
         super.viewDidLoad()
         self.drawView.layer.borderWidth = 1.0;
 
-        // Do any additional setup after loading the view.
+        // Load the random sample image
+        index = (Int(randomNum) % Int(numGivenPhotos));
+        loadGivenPhoto();
+    }
+    
+    // Set the given image to one from the list
+    func loadGivenPhoto() {
+        print(index);
+        let testPhoto = UIImage(named: givenPhotos[index])!
+        givenImageView.image = testPhoto;
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +64,6 @@ class DrawViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
 
     // MARK: - Navigation
     @IBAction func cancel(sender: UIBarButtonItem) {
@@ -61,14 +77,11 @@ class DrawViewController: UIViewController {
             // Save the drawing to the photo library
             saveDrawingToPhotoLibrary()
             
-            // Run the OpenCV OCR on the image
-            // resultOfOpenCV = ????
-            
             let NavigationController = segue.destinationViewController as! UINavigationController
             let DestinationViewController = NavigationController.topViewController as! ShowViewController
             
             // Get the info that generated this segue.
-            let name = "Drawing"
+            let name = givenPhotos[index];
             let photo = photoImage
             // let text = OpenCVWrapper.getStringFromImage()
             

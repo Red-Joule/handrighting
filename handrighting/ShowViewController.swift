@@ -13,6 +13,8 @@ class ShowViewController: UIViewController {
     // MARK: Properties
     @IBOutlet weak var imageTextLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var givenTextLabel: UILabel!
+    @IBOutlet weak var givenImageView: UIImageView!
     
     var image: Image?
     
@@ -23,10 +25,14 @@ class ShowViewController: UIViewController {
         if let image = image {
             navigationItem.title = image.name
             photoImageView.image = image.photo
-            photoImageView.accessibilityIdentifier = "test2.png"
             imageTextLabel.text = OpenCVWrapper.trainAndTest(photoImageView.image)
+            
+            givenTextLabel.text = image.name!;
+            let testPhoto = UIImage(named: image.name!)!;
+            givenImageView.image = testPhoto;
 
         }
+        
 
     }
 
