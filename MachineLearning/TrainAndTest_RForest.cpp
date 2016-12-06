@@ -8,11 +8,9 @@
 #include<iostream>
 #include<sstream>
 
-
 using namespace std;
 using namespace cv;
 using namespace cv::ml;
-
 
 // global variables ///////////////////////////////////////////////////////////////////////////////
 const int MIN_CONTOUR_AREA = 100;
@@ -81,11 +79,32 @@ int main(int argc, char const *argv[])
 
             // train //////////////////////////////////////////////////////////////////////////////
 
-    cv::Ptr<cv::ml::KNearest>  kNearest(cv::ml::KNearest::create());            // instantiate the KNN object
+           // instantiate the RTree object
+    Ptr<RTrees> forest;
+    int nsamples_all = matTrainingImagesAsFlattenedFloats.rows;
+    int ntrain_samples = (int)(nsamples_all*0.8);
 
                 // finally we get to the call to train, note that both parameters have to be of type Mat (a single Mat)
                 // even though in reality they are multiple images / numbers
-    kNearest->train(matTrainingImagesAsFlattenedFloats, cv::ml::ROW_SAMPLE, matClassificationInts);
+    double eps = 0.01f;
+
+    TermCriteria TC = TermCriteria(TermCriteria::MAX_ITER + (eps > 0 ? TermCriteria::EPS : 0), 100,0.01f);
+
+        forest = RTrees::create();
+        forest->setMaxDepth(10);
+        forest->setMinSampleCount(10);
+        forest->setRegressionAccuracy(0);
+        forest->setUseSurrogates(false);
+        forest->setMaxCategories(15);
+        forest->setPriors(Mat());
+        forest->setCalculateVarImportance(true);
+        forest->setActiveVarCount(4);
+        forest->setTermCriteria(TC);
+    //    forest->train( matTrainingImagesAsFlattenedFloats, CV_ROW_SAMPLE, matClassificationInts, 0, sample_idx, var_type, 0,
+    //        CvRTParams(10,10,0,false,15,0,true,4,100,0.01f,CV_TERMCRIT_ITER));
+
+
+  forest->train(matTrainingImagesAsFlattenedFloats, cv::ml::ROW_SAMPLE, matClassificationInts);
 
             // test ///////////////////////////////////////////////////////////////////////////////
 // testing image is a command line argument
@@ -173,7 +192,7 @@ int main(int argc, char const *argv[])
 
         cv::Mat matCurrentChar(0, 0, CV_32F);
 
-        kNearest->findNearest(matROIFlattenedFloat, 1, matCurrentChar);     // finally we can call find_nearest !!!
+        forest->predict(matROIFlattenedFloat);   //, 1, matCurrentChar);     // finally we can call predict !!!
 
         float fltCurrentChar = (float)matCurrentChar.at<float>(0, 0);
 
