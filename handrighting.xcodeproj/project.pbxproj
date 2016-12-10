@@ -19,6 +19,7 @@
 		37BBBA2E1DA3263300F8D05A /* handrightingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BBBA2D1DA3263300F8D05A /* handrightingTests.swift */; };
 		37C2EB571DB835CB00BA7506 /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2EB561DB835CB00BA7506 /* ShowViewController.swift */; };
 		37D99CD41DFC867600FEBB43 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D99CD31DFC867600FEBB43 /* CheckViewController.swift */; };
+		37D99CD61DFC99EC00FEBB43 /* Spellcheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D99CD51DFC99EC00FEBB43 /* Spellcheck.swift */; };
 		37DF4D2C1DDA98A200DBC3AF /* TrainAndTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37DF4D2A1DDA98A200DBC3AF /* TrainAndTest.cpp */; };
 		37ECC6081DB31723004BB9FF /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECC6071DB31723004BB9FF /* UploadViewController.swift */; };
 		37F0B7071DB588A300DDA479 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0B7061DB588A300DDA479 /* DrawViewController.swift */; };
@@ -69,6 +70,7 @@
 		37BBBA2F1DA3263300F8D05A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37C2EB561DB835CB00BA7506 /* ShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
 		37D99CD31DFC867600FEBB43 /* CheckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
+		37D99CD51DFC99EC00FEBB43 /* Spellcheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spellcheck.swift; sourceTree = "<group>"; };
 		37DF4D2A1DDA98A200DBC3AF /* TrainAndTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TrainAndTest.cpp; sourceTree = "<group>"; };
 		37DF4D2B1DDA98A200DBC3AF /* TrainAndTest.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TrainAndTest.hpp; sourceTree = "<group>"; };
 		37ECC6071DB31723004BB9FF /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				37F6D1541DB3078700351F06 /* ChooseViewController.swift */,
 				37F0B7081DB58E9B00DDA479 /* DrawView.swift */,
 				37F0B70B1DB58F0E00DDA479 /* Line.swift */,
+				37D99CD51DFC99EC00FEBB43 /* Spellcheck.swift */,
 				37BBBA1F1DA3263300F8D05A /* Assets.xcassets */,
 				37BBBA211DA3263300F8D05A /* LaunchScreen.storyboard */,
 				37BBBA241DA3263300F8D05A /* Info.plist */,
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37F0B7071DB588A300DDA479 /* DrawViewController.swift in Sources */,
+				37D99CD61DFC99EC00FEBB43 /* Spellcheck.swift in Sources */,
 				3745695E1DA5C8D70014A3DB /* Image.swift in Sources */,
 				37F0B7091DB58E9B00DDA479 /* DrawView.swift in Sources */,
 				37ECC6081DB31723004BB9FF /* UploadViewController.swift in Sources */,

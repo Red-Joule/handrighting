@@ -24,11 +24,20 @@ class ShowViewController: UIViewController {
         // Set up views if editing an existing Image.
         if let image = image {
             photoImageView.image = image.photo
-            imageTextLabel.text = OpenCVWrapper.trainAndTest(photoImageView.image)
+            let openCVResult = OpenCVWrapper.trainAndTest(photoImageView.image);
             
-            givenTextLabel.text = image.name!;
+            var ending = "Great job!"
+            if(openCVResult != image.name){
+                ending = "Better luck next time."
+            }
+            
+            givenTextLabel.text = "The answer is: " + image.name! + ". "
+            imageTextLabel.text = "You wrote... " + openCVResult + ". " + ending;
+
             let testPhoto = UIImage(named: image.name!)!;
             givenImageView.image = testPhoto;
+            givenImageView.layer.cornerRadius = self.givenImageView.frame.size.width / 4;
+            givenImageView.clipsToBounds = true;
 
         }
         

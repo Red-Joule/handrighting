@@ -19,27 +19,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="g6Z-ze-u08">
-                                <rect key="frame" x="20" y="139" width="560" height="120"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="g6Z-ze-u08">
+                                <rect key="frame" x="20" y="139" width="560" height="251"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTo-ta-BAt">
-                                        <rect key="frame" x="227" y="0.0" width="106" height="30"/>
-                                        <state key="normal" title="Upload a Photo"/>
-                                        <connections>
-                                            <segue destination="92n-2b-K0b" kind="presentation" identifier="UploadImage" id="jkC-fV-vzB"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKx-7c-L45">
-                                        <rect key="frame" x="236" y="90" width="88" height="30"/>
-                                        <state key="normal" title="Draw a Word"/>
-                                        <connections>
-                                            <segue destination="HQG-gi-Fkt" kind="presentation" id="5TA-0q-laE"/>
-                                        </connections>
-                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Handrighting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qm9-FW-rY5">
+                                        <rect key="frame" x="122" y="0.0" width="316" height="63"/>
+                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="50"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="64j-Oj-vu0">
+                                        <rect key="frame" x="0.0" y="123" width="560" height="128"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKx-7c-L45">
+                                                <rect key="frame" x="0.0" y="90" width="560" height="30"/>
+                                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="18"/>
+                                                <state key="normal" title="Draw a Word">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="HQG-gi-Fkt" kind="presentation" id="5TA-0q-laE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTo-ta-BAt">
+                                                <rect key="frame" x="0.0" y="8" width="560" height="30"/>
+                                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="18"/>
+                                                <state key="normal" title="Upload a Photo">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="92n-2b-K0b" kind="presentation" identifier="UploadImage" id="jkC-fV-vzB"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="eTo-ta-BAt" firstAttribute="leading" secondItem="64j-Oj-vu0" secondAttribute="leading" id="46d-Fh-hhV"/>
+                                            <constraint firstAttribute="trailing" secondItem="aKx-7c-L45" secondAttribute="trailing" id="7u2-kq-TX5"/>
+                                            <constraint firstAttribute="trailing" secondItem="eTo-ta-BAt" secondAttribute="trailing" id="LKO-4T-k12"/>
+                                            <constraint firstItem="aKx-7c-L45" firstAttribute="leading" secondItem="64j-Oj-vu0" secondAttribute="leading" id="WFo-Ih-J1p"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.30980392156862746" green="0.63921568627450975" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="g6Z-ze-u08" firstAttribute="top" secondItem="9M9-Fg-b5B" secondAttribute="bottom" constant="75" id="B5W-5p-cPM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g6Z-ze-u08" secondAttribute="trailing" id="BoY-Ts-Y8R"/>
@@ -64,18 +92,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VIL-8g-7ng">
-                                <rect key="frame" x="20" y="72" width="560" height="490"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VIL-8g-7ng">
+                                <rect key="frame" x="20" y="72" width="560" height="522"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="120" image="CAT" translatesAutoresizingMaskIntoConstraints="NO" id="eeG-4q-HgA">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Write what you see in the picture below..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63G-ay-CFe">
+                                        <rect key="frame" x="0.0" y="0.0" width="298" height="22"/>
+                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="120" image="CAT" translatesAutoresizingMaskIntoConstraints="NO" id="eeG-4q-HgA">
+                                        <rect key="frame" x="0.0" y="32" width="120" height="120"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="Ida-GS-qup"/>
                                             <constraint firstAttribute="width" constant="120" id="w8U-AV-uWx"/>
                                         </constraints>
                                     </imageView>
-                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" translatesAutoresizingMaskIntoConstraints="NO" id="BIg-6f-W6w" customClass="DrawView" customModule="handrighting" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="130" width="320" height="320"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" translatesAutoresizingMaskIntoConstraints="NO" id="BIg-6f-W6w" customClass="DrawView" customModule="handrighting" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="162" width="320" height="320"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="Dbq-aI-gKD"/>
@@ -83,8 +118,8 @@
                                             <constraint firstAttribute="width" secondItem="BIg-6f-W6w" secondAttribute="height" multiplier="1:1" id="itW-2D-Gob"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhc-hG-7ak">
-                                        <rect key="frame" x="0.0" y="460" width="96" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhc-hG-7ak">
+                                        <rect key="frame" x="0.0" y="492" width="96" height="30"/>
                                         <state key="normal" title="Clear Drawing"/>
                                         <connections>
                                             <action selector="clear:" destination="CT7-dB-qID" eventType="touchUpInside" id="I8i-ip-qB1"/>
@@ -93,7 +128,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.30980392159999998" green="0.63921568630000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="VIL-8g-7ng" firstAttribute="top" secondItem="RhZ-FD-1ea" secondAttribute="bottom" constant="8" id="AZw-jW-TtK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VIL-8g-7ng" secondAttribute="trailing" id="B9h-GU-R2U"/>
@@ -157,7 +192,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.30980392159999998" green="0.63921568630000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="yXj-u8-SP2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DQe-Yg-rMc"/>
                             <constraint firstItem="jlR-eG-Ndw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="Ssn-5D-TOC"/>
@@ -207,16 +242,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="f7d-Il-8dg">
-                                <rect key="frame" x="20" y="98" width="320" height="353"/>
+                                <rect key="frame" x="20" y="98" width="320" height="387"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Image Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXH-1D-ICC">
-                                        <rect key="frame" x="0.0" y="0.0" width="84" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="81" height="22"/>
+                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBR-Kx-cGH">
+                                        <rect key="frame" x="0.0" y="34" width="38" height="22"/>
+                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" translatesAutoresizingMaskIntoConstraints="NO" id="DZd-jh-fku">
-                                        <rect key="frame" x="0.0" y="33" width="320" height="320"/>
+                                        <rect key="frame" x="0.0" y="67" width="320" height="320"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="DZd-jh-fku" secondAttribute="height" multiplier="1:1" id="KNt-5m-d8G"/>
                                         </constraints>
@@ -224,7 +265,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.30980392159999998" green="0.63921568630000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Your Upload Result" id="EN4-Xc-enT">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ep7-Jn-cIg">
@@ -234,6 +275,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="correctedTextLabel" destination="hBR-Kx-cGH" id="t4n-ps-vBb"/>
                         <outlet property="imageTextLabel" destination="DXH-1D-ICC" id="0hf-JR-LvS"/>
                         <outlet property="photoImageView" destination="DZd-jh-fku" id="crd-fc-h2O"/>
                     </connections>
@@ -255,29 +297,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="g4M-Li-Bmq">
-                                <rect key="frame" x="20" y="104" width="560" height="506"/>
+                                <rect key="frame" x="20" y="104" width="560" height="508"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="120" translatesAutoresizingMaskIntoConstraints="NO" id="Jz3-Ho-FTs">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="eIR-VF-4rT"/>
                                             <constraint firstAttribute="height" constant="120" id="f9T-kr-2l7"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Given Image Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUs-aH-Y8g">
-                                        <rect key="frame" x="0.0" y="135" width="132" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <rect key="frame" x="0.0" y="135" width="130" height="22"/>
+                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Image Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnG-bf-Fk1">
-                                        <rect key="frame" x="0.0" y="171" width="84" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <rect key="frame" x="0.0" y="172" width="81" height="22"/>
+                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="300" translatesAutoresizingMaskIntoConstraints="NO" id="laY-fW-jLG">
-                                        <rect key="frame" x="0.0" y="206" width="300" height="300"/>
+                                        <rect key="frame" x="0.0" y="208" width="300" height="300"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="laY-fW-jLG" secondAttribute="height" multiplier="1:1" id="InQ-bw-ZWx"/>
                                         </constraints>
@@ -285,7 +328,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.30980392159999998" green="0.63921568630000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="g4M-Li-Bmq" firstAttribute="top" secondItem="G5H-gP-PgR" secondAttribute="bottom" constant="40" id="Igw-UC-Sms"/>
                             <constraint firstItem="g4M-Li-Bmq" firstAttribute="leading" secondItem="Gqc-Aq-qHB" secondAttribute="leadingMargin" id="bN9-6e-t7l"/>

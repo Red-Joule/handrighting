@@ -23,6 +23,8 @@ class DrawViewController: UIViewController {
     var index: Int!;
     var photoImage: UIImage!         // The image
     
+//    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
+//    self.profileImageView.clipsToBounds = YES;
     // MARK: Actions
     
     @IBAction func clear(sender: UIButton) {
@@ -44,7 +46,8 @@ class DrawViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.drawView.layer.borderWidth = 1.0;
-
+        self.givenImageView.layer.cornerRadius = self.givenImageView.frame.size.width / 4;
+        self.givenImageView.clipsToBounds = true;
         // Load the random sample image
         let numGivenPhotos = givenPhotos.count;
         index = (Int(randomNum) % Int(numGivenPhotos));

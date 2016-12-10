@@ -13,7 +13,8 @@ class CheckViewController: UIViewController {
     // MARK: Properties
     @IBOutlet weak var imageTextLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
-
+    @IBOutlet weak var correctedTextLabel: UILabel!
+    
     var image: Image?
     
     override func viewDidLoad() {
@@ -22,7 +23,18 @@ class CheckViewController: UIViewController {
         // Set up views if editing an existing Image.
         if let image = image {
             photoImageView.image = image.photo
-            imageTextLabel.text = OpenCVWrapper.trainAndTest(photoImageView.image)
+            let openCVResult = OpenCVWrapper.trainAndTest(photoImageView.image)
+            
+            let word = Spellcheck(raw_text: openCVResult.lowercaseString);
+            print(word);
+            word.makeCorrection();
+            imageTextLabel.text = "You wrote... " + openCVResult;
+            if(word.corrected_text == "notFound") {
+                correctedTextLabel.text = "No alternative spellings found.";
+            } else {
+                correctedTextLabel.text = "Did you mean... " + word.corrected_text.uppercaseString + "?";
+            }
+            
         }
     }
 
