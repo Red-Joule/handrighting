@@ -64,7 +64,7 @@ class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             // resultOfOpenCV = ????
             
             let NavigationController = segue.destinationViewController as! UINavigationController
-            let DestinationViewController = NavigationController.topViewController as! ShowViewController
+            let DestinationViewController = NavigationController.topViewController as! CheckViewController
             
             // Get the info that generated this segue.
             let photo = photoImageView.image
@@ -73,7 +73,7 @@ class UploadViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             // let text = OpenCVWrapper.getStringFromImage()
             
             // Set the image to be passed.
-            let savedImage = Image(photo: photo!, name: nil, text: "resultOfOpenCV") // when OpenCVWrapper.getStringFromImage available, substitute nil for text
+            let savedImage = Image(photo: photo!, name: "NONE", text: "resultOfOpenCV") // when OpenCVWrapper.getStringFromImage available, substitute nil for text
             DestinationViewController.image = savedImage
         
         }

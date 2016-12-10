@@ -175,7 +175,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Gjh-xy-fPZ">
                             <connections>
-                                <segue destination="AjA-6v-tok" kind="show" id="0rJ-PC-qCM"/>
+                                <segue destination="cZz-Nu-16i" kind="show" id="5E7-H6-KqD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -194,7 +194,55 @@
             </objects>
             <point key="canvasLocation" x="1801" y="-150"/>
         </scene>
-        <!--Show View Controller-->
+        <!--Your Upload Result-->
+        <scene sceneID="Qxk-GK-WFo">
+            <objects>
+                <viewController id="I33-E8-gm7" customClass="CheckViewController" customModule="handrighting" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cDZ-I1-tZ2"/>
+                        <viewControllerLayoutGuide type="bottom" id="i3x-Nb-zZO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RX9-9h-dEe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="f7d-Il-8dg">
+                                <rect key="frame" x="20" y="98" width="320" height="353"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Image Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXH-1D-ICC">
+                                        <rect key="frame" x="0.0" y="0.0" width="84" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" translatesAutoresizingMaskIntoConstraints="NO" id="DZd-jh-fku">
+                                        <rect key="frame" x="0.0" y="33" width="320" height="320"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="DZd-jh-fku" secondAttribute="height" multiplier="1:1" id="KNt-5m-d8G"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Your Upload Result" id="EN4-Xc-enT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ep7-Jn-cIg">
+                            <connections>
+                                <segue destination="Rjy-DB-ACo" kind="show" id="rTf-Dj-pXk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageTextLabel" destination="DXH-1D-ICC" id="0hf-JR-LvS"/>
+                        <outlet property="photoImageView" destination="DZd-jh-fku" id="crd-fc-h2O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v90-Mo-iVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3697" y="-150"/>
+        </scene>
+        <!--Your Drawing Result-->
         <scene sceneID="bBv-YG-Z39">
             <objects>
                 <viewController id="yfu-Pp-M7d" customClass="ShowViewController" customModule="handrighting" customModuleProvider="target" sceneMemberID="viewController">
@@ -206,8 +254,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="g4M-Li-Bmq">
-                                <rect key="frame" x="20" y="104" width="560" height="581"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="g4M-Li-Bmq">
+                                <rect key="frame" x="20" y="104" width="560" height="506"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="120" translatesAutoresizingMaskIntoConstraints="NO" id="Jz3-Ho-FTs">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
@@ -217,19 +265,19 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Given Image Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUs-aH-Y8g">
-                                        <rect key="frame" x="0.0" y="160" width="132" height="21"/>
+                                        <rect key="frame" x="0.0" y="135" width="132" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Image Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnG-bf-Fk1">
-                                        <rect key="frame" x="0.0" y="221" width="84" height="21"/>
+                                        <rect key="frame" x="0.0" y="171" width="84" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="300" translatesAutoresizingMaskIntoConstraints="NO" id="laY-fW-jLG">
-                                        <rect key="frame" x="0.0" y="281" width="300" height="300"/>
+                                        <rect key="frame" x="0.0" y="206" width="300" height="300"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="laY-fW-jLG" secondAttribute="height" multiplier="1:1" id="InQ-bw-ZWx"/>
                                         </constraints>
@@ -244,7 +292,7 @@
                             <constraint firstItem="g4M-Li-Bmq" firstAttribute="trailing" secondItem="Gqc-Aq-qHB" secondAttribute="trailingMargin" id="cjX-KJ-rt1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="04W-4g-M6k">
+                    <navigationItem key="navigationItem" title="Your Drawing Result" id="04W-4g-M6k">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CBe-pr-iIt">
                             <connections>
                                 <segue destination="Rjy-DB-ACo" kind="show" id="4nM-f6-zaK"/>
@@ -260,7 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zD-yR-MHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3675" y="314"/>
+            <point key="canvasLocation" x="3667" y="741"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ojH-hG-Bs6">
@@ -332,7 +380,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8BD-qU-Q0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2707" y="314"/>
+            <point key="canvasLocation" x="2707" y="741"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iPf-e5-HKt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cZz-Nu-16i" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t1r-By-DcX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="I33-E8-gm7" kind="relationship" relationship="rootViewController" id="eta-m6-45P"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8TH-l4-7hQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2685" y="-150"/>
         </scene>
     </scenes>
     <resources>
@@ -340,6 +406,6 @@
         <image name="defaultPhoto" width="540" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LiW-vJ-xpN"/>
+        <segue reference="4nM-f6-zaK"/>
     </inferredMetricsTieBreakers>
 </document>

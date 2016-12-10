@@ -17,7 +17,6 @@ class DrawViewController: UIViewController {
     @IBOutlet weak var givenImageView: UIImageView!
     
     // Keep track of the sample photos
-    let numGivenPhotos = Int(6);
     let givenPhotos = ["BUS", "CAR", "CAT", "DOG", "FISH", "SOCK"];
     let randomNum = Int(arc4random());
     
@@ -47,6 +46,7 @@ class DrawViewController: UIViewController {
         self.drawView.layer.borderWidth = 1.0;
 
         // Load the random sample image
+        let numGivenPhotos = givenPhotos.count;
         index = (Int(randomNum) % Int(numGivenPhotos));
         loadGivenPhoto();
     }

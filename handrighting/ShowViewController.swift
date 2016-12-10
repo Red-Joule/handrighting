@@ -23,7 +23,6 @@ class ShowViewController: UIViewController {
 
         // Set up views if editing an existing Image.
         if let image = image {
-            navigationItem.title = image.name
             photoImageView.image = image.photo
             imageTextLabel.text = OpenCVWrapper.trainAndTest(photoImageView.image)
             
