@@ -428,7 +428,7 @@
 				INFOPLIST_FILE = handrighting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.handrighting;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.warren.jenna.handrighting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "handrighting/handrighting-Bridging-Header.h";
@@ -451,7 +451,7 @@
 				INFOPLIST_FILE = handrighting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.handrighting;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.warren.jenna.handrighting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "handrighting/handrighting-Bridging-Header.h";
