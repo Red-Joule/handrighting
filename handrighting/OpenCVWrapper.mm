@@ -6,8 +6,8 @@
 //  Copyright © 2016 Red Joule. All rights reserved.
 //
 
-#import "OpenCVWrapper.hpp"
 #import <opencv2/opencv.hpp>
+#import "OpenCVWrapper.hpp"
 #import "TrainAndTest.hpp"
 
 // TrainAndTest.cpp
