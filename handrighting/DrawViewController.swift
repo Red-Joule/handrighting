@@ -17,8 +17,9 @@ class DrawViewController: UIViewController {
     @IBOutlet weak var givenImageView: UIImageView!
     
     // Keep track of the sample photos
-    let givenPhotos = ["BUS", "CAR", "CAT", "DOG", "FISH", "SOCK"];
-    let randomNum = Int(arc4random_uniform(6));
+    let givenPhotos = ["BEAR", "BUS", "CAR", "CAT", "DOG", "FISH", "FLOWER", "LION", "SOCK"];
+    let randomNum = Int(arc4random_uniform(9));
+    
     
     var index: Int!;
     var photoImage: UIImage!         // The image
@@ -49,8 +50,7 @@ class DrawViewController: UIViewController {
         self.givenImageView.layer.cornerRadius = self.givenImageView.frame.size.width / 4;
         self.givenImageView.clipsToBounds = true;
         // Load the random sample image
-        let numGivenPhotos = givenPhotos.count;
-        index = (Int(randomNum) % Int(numGivenPhotos));
+        index = Int(randomNum);
         loadGivenPhoto();
     }
     

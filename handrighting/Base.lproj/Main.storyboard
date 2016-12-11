@@ -120,7 +120,9 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhc-hG-7ak">
                                         <rect key="frame" x="0.0" y="492" width="96" height="30"/>
-                                        <state key="normal" title="Clear Drawing"/>
+                                        <state key="normal" title="Clear Drawing">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="clear:" destination="CT7-dB-qID" eventType="touchUpInside" id="I8i-ip-qB1"/>
                                         </connections>
