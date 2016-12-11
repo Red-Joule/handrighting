@@ -18,7 +18,7 @@ class DrawViewController: UIViewController {
     
     // Keep track of the sample photos
     let givenPhotos = ["BUS", "CAR", "CAT", "DOG", "FISH", "SOCK"];
-    let randomNum = Int(arc4random());
+    let randomNum = Int(arc4random_uniform(6));
     
     var index: Int!;
     var photoImage: UIImage!         // The image
