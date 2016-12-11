@@ -20,23 +20,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="g6Z-ze-u08">
-                                <rect key="frame" x="20" y="139" width="560" height="251"/>
+                                <rect key="frame" x="20" y="139" width="560" height="238"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Handrighting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qm9-FW-rY5">
-                                        <rect key="frame" x="122" y="0.0" width="316" height="63"/>
-                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="50"/>
+                                        <rect key="frame" x="154" y="0.0" width="253" height="50"/>
+                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="40"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="64j-Oj-vu0">
-                                        <rect key="frame" x="0.0" y="123" width="560" height="128"/>
+                                        <rect key="frame" x="0.0" y="110" width="560" height="128"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKx-7c-L45">
                                                 <rect key="frame" x="0.0" y="90" width="560" height="30"/>
                                                 <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="18"/>
                                                 <state key="normal" title="Draw a Word">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <segue destination="HQG-gi-Fkt" kind="presentation" id="5TA-0q-laE"/>
@@ -47,7 +47,7 @@
                                                 <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="18"/>
                                                 <state key="normal" title="Upload a Word">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <segue destination="92n-2b-K0b" kind="presentation" identifier="UploadImage" id="jkC-fV-vzB"/>
@@ -95,8 +95,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VIL-8g-7ng">
                                 <rect key="frame" x="20" y="72" width="560" height="522"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Write what you see in the picture below..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63G-ay-CFe">
-                                        <rect key="frame" x="0.0" y="0.0" width="298" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Write what's in the picture below..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63G-ay-CFe">
+                                        <rect key="frame" x="0.0" y="0.0" width="252" height="22"/>
                                         <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -298,8 +298,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="g4M-Li-Bmq">
-                                <rect key="frame" x="20" y="104" width="560" height="508"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="g4M-Li-Bmq">
+                                <rect key="frame" x="20" y="72" width="560" height="493"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="120" placeholderIntrinsicHeight="120" translatesAutoresizingMaskIntoConstraints="NO" id="Jz3-Ho-FTs">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
@@ -310,19 +310,19 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Given Image Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUs-aH-Y8g">
-                                        <rect key="frame" x="0.0" y="135" width="130" height="22"/>
+                                        <rect key="frame" x="0.0" y="130" width="130" height="22"/>
                                         <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Image Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZnG-bf-Fk1">
-                                        <rect key="frame" x="0.0" y="172" width="81" height="22"/>
+                                        <rect key="frame" x="0.0" y="162" width="81" height="22"/>
                                         <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="300" translatesAutoresizingMaskIntoConstraints="NO" id="laY-fW-jLG">
-                                        <rect key="frame" x="0.0" y="208" width="300" height="300"/>
+                                        <rect key="frame" x="0.0" y="193" width="300" height="300"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="laY-fW-jLG" secondAttribute="height" multiplier="1:1" id="InQ-bw-ZWx"/>
                                         </constraints>
@@ -332,7 +332,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.30980392159999998" green="0.63921568630000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="g4M-Li-Bmq" firstAttribute="top" secondItem="G5H-gP-PgR" secondAttribute="bottom" constant="40" id="Igw-UC-Sms"/>
+                            <constraint firstItem="g4M-Li-Bmq" firstAttribute="top" secondItem="G5H-gP-PgR" secondAttribute="bottom" constant="8" id="Igw-UC-Sms"/>
                             <constraint firstItem="g4M-Li-Bmq" firstAttribute="leading" secondItem="Gqc-Aq-qHB" secondAttribute="leadingMargin" id="bN9-6e-t7l"/>
                             <constraint firstItem="g4M-Li-Bmq" firstAttribute="trailing" secondItem="Gqc-Aq-qHB" secondAttribute="trailingMargin" id="cjX-KJ-rt1"/>
                         </constraints>
@@ -353,7 +353,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zD-yR-MHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3667" y="741"/>
+            <point key="canvasLocation" x="3675" y="699"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ojH-hG-Bs6">

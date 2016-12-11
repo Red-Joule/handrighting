@@ -28,7 +28,7 @@ class ShowViewController: UIViewController {
             
             var ending = "Great job!"
             if(openCVResult != image.name){
-                ending = "Better luck next time."
+                ending = "Try again."
             }
             
             givenTextLabel.text = "The answer is: " + image.name! + ". "
