@@ -13,6 +13,8 @@ class ShowViewController: UIViewController {
     // MARK: Properties
     @IBOutlet weak var imageTextLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var givenTextLabel: UILabel!
+    @IBOutlet weak var givenImageView: UIImageView!
     
     var image: Image?
     
@@ -21,12 +23,24 @@ class ShowViewController: UIViewController {
 
         // Set up views if editing an existing Image.
         if let image = image {
-            navigationItem.title = image.name
             photoImageView.image = image.photo
-            photoImageView.accessibilityIdentifier = "test2.png"
-            imageTextLabel.text = OpenCVWrapper.trainAndTest(photoImageView.image)
+            let openCVResult = OpenCVWrapper.trainAndTest(photoImageView.image);
+            
+            var ending = "Great job!"
+            if(openCVResult != image.name){
+                ending = "Try again."
+            }
+            
+            givenTextLabel.text = "The answer is: " + image.name! + ". "
+            imageTextLabel.text = "You wrote... " + openCVResult + ". " + ending;
+
+            let testPhoto = UIImage(named: image.name!)!;
+            givenImageView.image = testPhoto;
+            givenImageView.layer.cornerRadius = self.givenImageView.frame.size.width / 4;
+            givenImageView.clipsToBounds = true;
 
         }
+        
 
     }
 

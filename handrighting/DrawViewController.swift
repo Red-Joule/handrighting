@@ -14,9 +14,18 @@ class DrawViewController: UIViewController {
     
     @IBOutlet weak var drawView: DrawView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var givenImageView: UIImageView!
     
+    // Keep track of the sample photos
+    let givenPhotos = ["BEAR", "BUS", "CAR", "CAT", "DOG", "FISH", "FLOWER", "LION", "SOCK"];
+    let randomNum = Int(arc4random_uniform(9));
+    
+    
+    var index: Int!;
     var photoImage: UIImage!         // The image
     
+//    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
+//    self.profileImageView.clipsToBounds = YES;
     // MARK: Actions
     
     @IBAction func clear(sender: UIButton) {
@@ -38,8 +47,19 @@ class DrawViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.drawView.layer.borderWidth = 1.0;
-
-        // Do any additional setup after loading the view.
+        self.givenImageView.layer.cornerRadius = self.givenImageView.frame.size.width / 4;
+        self.givenImageView.clipsToBounds = true;
+        // Load the random sample image
+        index = Int(randomNum);
+        loadGivenPhoto();
+    }
+    
+    // Set the given image to one from the list
+    func loadGivenPhoto() {
+        print(index);
+        let testPhoto = UIImage(named: givenPhotos[index])!
+        givenImageView.image = testPhoto;
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +67,6 @@ class DrawViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
 
     // MARK: - Navigation
     @IBAction func cancel(sender: UIBarButtonItem) {
@@ -61,14 +80,11 @@ class DrawViewController: UIViewController {
             // Save the drawing to the photo library
             saveDrawingToPhotoLibrary()
             
-            // Run the OpenCV OCR on the image
-            // resultOfOpenCV = ????
-            
             let NavigationController = segue.destinationViewController as! UINavigationController
             let DestinationViewController = NavigationController.topViewController as! ShowViewController
             
             // Get the info that generated this segue.
-            let name = "Drawing"
+            let name = givenPhotos[index];
             let photo = photoImage
             // let text = OpenCVWrapper.getStringFromImage()
             

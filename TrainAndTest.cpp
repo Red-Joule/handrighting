@@ -6,14 +6,13 @@
 //  Copyright © 2016 Red Joule. All rights reserved.
 //
 
-#include "TrainAndTest.hpp"
-
 // TrainAndTest.cpp
 
 #include<opencv2/core/core.hpp>
 #include<opencv2/highgui/highgui.hpp>
 #include<opencv2/imgproc/imgproc.hpp>
 #include<opencv2/ml/ml.hpp>
+#include "TrainAndTest.hpp"
 
 #include<iostream>
 #include<sstream>
