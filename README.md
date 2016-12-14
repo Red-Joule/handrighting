@@ -24,6 +24,7 @@ OR
 
 ## To run the testbench
 1. in terminal, cd into MachineLearning 
-2. run 'make' so that you have the ./TrainAndTest binary file in MachineLearning
-3. make sure you have python 3+ installed on your computer
-4. run 'python testbench.py' 
+2. run '/Applications/Cmake.app/Contents/bin/cmake -DCMAKE_BUILD_TYP E=Debug .'
+3. run 'make' so that you have the ./TrainAndTest binary file in MachineLearning
+4. make sure you have python 3+ installed on your computer
+5. run 'python testbench.py' 
