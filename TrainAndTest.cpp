@@ -190,7 +190,7 @@ char * trainAndTest(char const * filename)
     
     cv::imshow("matTestingNumbers", matTestingNumbers);     // show input image with green boxes drawn around found digits
     
-    cv::waitKey(0);                                         // wait for user key press
+    // cv::waitKey(0);                                         // wait for user key press
     
     return(strFinalString);
 }
