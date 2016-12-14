@@ -1,5 +1,7 @@
 # handrighting
 
+## To build and run the app
+
 1. Use Mac OS X
 2. Install XCode 7.3
 3. Install OpenCV 2.4 with opencv_contrib extras (follow instructions below) (install dependencies as needed)
@@ -19,3 +21,9 @@ OR
 6. The app should be running on your iPhone now
 (https://www.youtube.com/watch?v=Dib1HSTk1dA)
 
+
+## To run the testbench
+1. in terminal, cd into MachineLearning 
+2. run 'make' so that you have the ./TrainAndTest binary file in MachineLearning
+3. make sure you have python 3+ installed on your computer
+4. run 'python testbench.py' 
