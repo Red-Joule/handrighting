@@ -15,7 +15,7 @@ OR
 2. Open up iTunes on your computer, and navigate to the "Apps" section
 3. Drag and drop the .ipa file into the "Library"
 4. Plug your iPhone into your computer
-5. Go to the Devices>Apps section, and click "Install" next to handrighting, and then click "Apply"
+5. Go to the Device's>Apps section in iTunes, and click "Install" next to handrighting, and then click "Apply"
 6. The app should be running on your iPhone now
 (https://www.youtube.com/watch?v=Dib1HSTk1dA)
 
