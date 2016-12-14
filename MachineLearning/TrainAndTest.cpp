@@ -166,8 +166,10 @@ int main(int argc, char const *argv[])
         cv::Mat matROIFlattenedFloat = matROIFloat.reshape(1, 1);
 
         cv::Mat matCurrentChar(0, 0, CV_32F);
+std::cout << matCurrentChar << std::endl;
 
         kNearest->findNearest(matROIFlattenedFloat, 1, matCurrentChar);     // finally we can call find_nearest !!!
+std::cout << matCurrentChar << std::endl;
 
         float fltCurrentChar = (float)matCurrentChar.at<float>(0, 0);
 
